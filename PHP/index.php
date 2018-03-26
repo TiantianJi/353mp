@@ -18,10 +18,10 @@
 </form>
 <?php
     //login
-    define('DB_HOST', '');
-    define('DB_USER', '');
-    define('DB_PASS', '');
-    define('DB_NAME', '');
+    define('DB_HOST', 'localhost');
+    define('DB_USER', 'root');
+    define('DB_PASS', '????');
+    define('DB_NAME', 'Main');
 
     $dbConnection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -39,19 +39,29 @@
     mysqli_close($dbConnection);
 
 ?>
-    //get the answer
 <?php
-    $query = "SELECT problem_title FROM table_name";
+    //login
+    define('DB_HOST1', 'localhost');
+    define('DB_USER1', 'root');
+    define('DB_PASS1', '????');
+    define('DB_NAME1', 'Main');
+
+    $dbConnection1 = mysqli_connect(DB_HOST1, DB_USER1, DB_PASS1, DB_NAME1);
+    $query = "SELECT * FROM USERINFO";
     // here we save mysqli_query in result
-    $result = mysqli_query($dbConnection, $query);
+    $result = mysqli_query($dbConnection1, $query);
     $row = mysqli_fetch_array($result);
     // show the result in web page
-    while($row){
-        $problem_titile = $row['problem_title'];
+    $t_user = $row['t_user'];
+    echo sizeof($row['t_user']);
+    for ($i = 0; $i <sizeof($t_user);$i++)
+    {
         echo "<tr>";
-        echo "<td>".$problem_titile."</td>";
+        echo "<td>".$t_user."</td>";
         echo "</tr>";
     }
+
+    mysqli_close($dbConnection1);
 ?>
 </body>
 </html>
