@@ -18,10 +18,10 @@
 </form>
 <?php
     //login
-    define('DB_HOST', 'localhost');
-    define('DB_USER', 'root');
-    define('DB_PASS', '????');
-    define('DB_NAME', 'Main');
+    define('DB_HOST', '');
+    define('DB_USER', '');
+    define('DB_PASS', '');
+    define('DB_NAME', '');
 
     $dbConnection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -39,16 +39,11 @@
     mysqli_close($dbConnection);
 
 ?>
+    //get the answer
 <?php
-    //login
-    define('DB_HOST1', 'localhost');
-    define('DB_USER1', 'root');
-    define('DB_PASS1', '????');
-    define('DB_NAME1', 'Main');
-
-    $dbConnection1 = mysqli_connect(DB_HOST1, DB_USER1, DB_PASS1, DB_NAME1);
-    $query = "SELECT * FROM USERINFO";
+    $query = "SELECT problem_title FROM table_name";
     // here we save mysqli_query in result
+<<<<<<< HEAD
     $result = $dbConnection1->query($query);
     if ($result->num_rows > 0) {
     // 输出数据
@@ -58,9 +53,17 @@
     }
     } else {
         echo "0 结果";
+=======
+    $result = mysqli_query($dbConnection, $query);
+    $row = mysqli_fetch_array($result);
+    // show the result in web page
+    while($row){
+        $problem_titile = $row['problem_title'];
+        echo "<tr>";
+        echo "<td>".$problem_titile."</td>";
+        echo "</tr>";
+>>>>>>> parent of f363a6c... PHP
     }
-
-    mysqli_close($dbConnection1);
 ?>
 </body>
 </html>
