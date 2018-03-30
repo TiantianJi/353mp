@@ -49,6 +49,7 @@
     $dbConnection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     $query = "SELECT problem_title FROM table_name";
     // here we save mysqli_query in result
+<<<<<<< HEAD
     $result = mysqli_query($dbConnection, $query);
     $colums = mysqli_num_fields($result);   //get colums
     // show the result in web page
@@ -66,6 +67,17 @@
         for ($i = 0; $i < $colums; $i++){
             echo "<td>$row[$i]</td>td>";
         }
+=======
+    $result = mysqli_query($dbConnection1, $query);
+    $row = mysqli_fetch_array($result);
+    // show the result in web page
+    $t_user = $row['t_user'];
+    echo sizeof($row['t_user']);
+    for ($i = 0; $i <sizeof($t_user);$i++)
+    {
+        echo "<tr>";
+        echo "<td>".$t_user."</td>";
+>>>>>>> parent of 4345e12... index 2.0
         echo "</tr>";
     }
     echo "</table>"
