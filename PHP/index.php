@@ -44,6 +44,7 @@
     $query = "SELECT problem_title FROM table_name";
     // here we save mysqli_query in result
 <<<<<<< HEAD
+<<<<<<< HEAD
     $result = $dbConnection1->query($query);
     if ($result->num_rows > 0) {
     // 输出数据
@@ -63,6 +64,18 @@
         echo "<td>".$problem_titile."</td>";
         echo "</tr>";
 >>>>>>> parent of f363a6c... PHP
+=======
+    $result = mysqli_query($dbConnection1, $query);
+    $row = mysqli_fetch_array($result);
+    // show the result in web page
+    $t_user = $row['t_user'];
+    echo sizeof($row['t_user']);
+    for ($i = 0; $i <sizeof($t_user);$i++)
+    {
+        echo "<tr>";
+        echo "<td>".$t_user."</td>";
+        echo "</tr>";
+>>>>>>> parent of 4345e12... index 2.0
     }
 ?>
 </body>
