@@ -49,16 +49,15 @@
     $dbConnection1 = mysqli_connect(DB_HOST1, DB_USER1, DB_PASS1, DB_NAME1);
     $query = "SELECT * FROM USERINFO";
     // here we save mysqli_query in result
-    $result = mysqli_query($dbConnection1, $query);
-    $row = mysqli_fetch_array($result);
-    // show the result in web page
-    $t_user = $row['t_user'];
-    echo sizeof($row['t_user']);
-    for ($i = 0; $i <sizeof($t_user);$i++)
-    {
-        echo "<tr>";
-        echo "<td>".$t_user."</td>";
-        echo "</tr>";
+    $result = $dbConnection1->query($query);
+    if ($result->num_rows > 0) {
+    // 输出数据
+        echo "<br>";
+    while($row = $result->fetch_assoc()) {
+        echo "t_user: " . $row["t_user"]. "<br>";
+    }
+    } else {
+        echo "0 结果";
     }
 
     mysqli_close($dbConnection1);
