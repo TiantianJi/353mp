@@ -41,29 +41,34 @@
 ?>
     //get the answer
 <?php
+    define('DB_HOST', '');
+    define('DB_USER', '');
+    define('DB_PASS', '');
+    define('DB_NAME', '');
+
+    $dbConnection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     $query = "SELECT problem_title FROM table_name";
     // here we save mysqli_query in result
-<<<<<<< HEAD
-    $result = $dbConnection1->query($query);
-    if ($result->num_rows > 0) {
-    // 输出数据
-        echo "<br>";
-    while($row = $result->fetch_assoc()) {
-        echo "t_user: " . $row["t_user"]. "<br>";
-    }
-    } else {
-        echo "0 结果";
-=======
     $result = mysqli_query($dbConnection, $query);
-    $row = mysqli_fetch_array($result);
+    $colums = mysqli_num_fields($result);   //get colums
     // show the result in web page
-    while($row){
-        $problem_titile = $row['problem_title'];
-        echo "<tr>";
-        echo "<td>".$problem_titile."</td>";
-        echo "</tr>";
->>>>>>> parent of f363a6c... PHP
+    echo "<table>";
+    //print the first row with title
+    echo "<tr>";
+    for($i = 0; $i < $colums; $i++){
+        $field_name = mysqli_field_name($result, $i);
+        echo "<th>$field_name</th>";
     }
+    echo "</tr>";
+    // if there has row, we print that row
+    while($row = mysqli_fetch_row($result)){
+        echo "<tr>";
+        for ($i = 0; $i < $colums; $i++){
+            echo "<td>$row[$i]</td>td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>"
 ?>
 </body>
 </html>
