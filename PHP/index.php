@@ -50,6 +50,7 @@
     $query = "SELECT problem_title FROM table_name";
     // here we save mysqli_query in result
 <<<<<<< HEAD
+<<<<<<< HEAD
     $result = mysqli_query($dbConnection, $query);
     $colums = mysqli_num_fields($result);   //get colums
     // show the result in web page
@@ -68,6 +69,8 @@
             echo "<td>$row[$i]</td>td>";
         }
 =======
+=======
+>>>>>>> parent of 4345e12... index 2.0
     $result = mysqli_query($dbConnection1, $query);
     $row = mysqli_fetch_array($result);
     // show the result in web page
@@ -77,6 +80,9 @@
     {
         echo "<tr>";
         echo "<td>".$t_user."</td>";
+<<<<<<< HEAD
+>>>>>>> parent of 4345e12... index 2.0
+=======
 >>>>>>> parent of 4345e12... index 2.0
         echo "</tr>";
     }
