@@ -52,7 +52,7 @@ CREATE TABLE situated(
   FOREIGN KEY (DepartmentNumber) REFERENCES Department(DepartmentNumber)
 );
 
-CREATE TABLE chanrgedBy (
+CREATE TABLE changedBy (
   PID     INTEGER(40) NOT NULL PRIMARY KEY ,
   DNumber INTEGER(40) NOT NULL ,
   FOREIGN KEY (PID) REFERENCES Project (PID),
@@ -181,9 +181,9 @@ INSERT INTO assigned VALUE (2, '101');
 INSERT INTO situated VALUE ('101', 1);
 INSERT INTO situated VALUE ('102', 1);
 
-INSERT INTO chanrgedBy VALUE (1, 1);
-INSERT INTO chanrgedBy VALUE (2, 1);
-INSERT INTO chanrgedBy VALUE (3, 2);
+INSERT INTO changedBy VALUE (1, 1);
+INSERT INTO changedBy VALUE (2, 1);
+INSERT INTO changedBy VALUE (3, 2);
 
 INSERT INTO workIn VALUE (1, 1);
 INSERT INTO workIn VALUE (2, 2);

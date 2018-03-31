@@ -45,6 +45,7 @@ $dbConnection1 = mysqli_connect(DB_HOST1, DB_USER1, DB_PASS1, DB_NAME1);
 $query = "SELECT * FROM USERINFO";
 // here we save mysqli_query in result
 $result = $dbConnection1->query($query);
+var_dump($result);
 if ($result->num_rows > 0) {
     // 输出数据
     echo "<br>";
