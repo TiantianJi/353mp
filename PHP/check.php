@@ -6,8 +6,6 @@
 <form method="post" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
     <select name='1' id = '1' onchange="setSelect2(document.getElementById('1'))">
         <option value="none"> ---------- </option>
-
-
         <option value="assigned">assigned</option>
         <option value="changedBy">changedBy</option>
         <option value="Department">Department</option>
@@ -41,54 +39,55 @@
         }else if ('Department' === sel.options[sel.selectedIndex].text){
             setDepartment(document.getElementById('2'));
         }else if ('Dependent' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
+            setDependent(document.getElementById('2'));
         }else if ('Employees' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
+            setEmployees(document.getElementById('2'));
         }else if ('Location' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
+            setLocation(document.getElementById('2'));
         }else if ('manage' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
+            setmanage(document.getElementById('2'));
         }else if ('Project' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
+            setProject(document.getElementById('2'));
         }else if ('related' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
+            setrelated(document.getElementById('2'));
         }else if ('situated' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
+            setsituated(document.getElementById('2'));
         }else if ('SuperviseOf' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
+            setSuerviseOf(document.getElementById('2'));
         }else if ('workIn' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
+            setworkIn(document.getElementById('2'));
         }else if ('workOn' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
+            setworkOn(document.getElementById('2'));
         }
     }
 
     function setAssigned(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'place', 'place');
     }
 
     function setchangedBy(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        alert(3);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'DNumber', 'DNumber');
     }
 
     function setchangedBy(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'DNumber', 'DNumber');
     }
 
     function setDepartment(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'DepartmentNumber', 'DepartmentNumber');
         jsAddItemToSelect(objSelect, 'DepartmentName', 'DepartmentName');
     }
 
     function setDependent(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'DependentSIN', 'DependentSIN');
         jsAddItemToSelect(objSelect, 'dependentName', 'dependentName');
         jsAddItemToSelect(objSelect, 'dBirthDate', 'dBirthDate');
@@ -96,7 +95,7 @@
     }
 
     function setEmployees(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'SIN', 'SIN');
         jsAddItemToSelect(objSelect, 'Name', 'Name');
         jsAddItemToSelect(objSelect, 'birthDate', 'birthDate');
@@ -107,50 +106,50 @@
     }
 
     function setLocation(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'place', 'place');
     }
 
     function setmanage(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'DNumber', 'DNumber')
         jsAddItemToSelect(objSelect, 'SIN', 'SIN');
         jsAddItemToSelect(objSelect, 'StarDate', 'StarDate');
     }
 
     function setProject(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'PIN', 'PIN');
         jsAddItemToSelect(objSelect, 'PName', 'PName');
     }
 
     function setrelated(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'DependentSIN', 'DependentSIN');
         jsAddItemToSelect(objSelect, 'SIN', 'SIN');
     }
 
     function setsituated(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'place', 'place');
         jsAddItemToSelect(objSelect, 'DepartmentNumber', 'DepartmentNumber');
     }
 
-    function setEmployeeSIN(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+    function setSuerviseOf(objSelect) {
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'EmployeeSIN', 'EmployeeSIN');
         jsAddItemToSelect(objSelect, 'SupervisorSIN', 'SupervisorSIN');
     }
 
     function setworkIn(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
+        jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, 'SIN', 'SIN');
         jsAddItemToSelect(objSelect, 'DNumber', 'DNumber');
     }
 
     function setworkOn(objSelect) {
-        jsRemoveSelectedItemFromSelect(objSelect);
-        jsAddItemToSelect(objSelect, 'PIN', 'PIN');
+        jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'SIN', 'SIN');
         jsAddItemToSelect(objSelect, 'hours', 'hours');
     }
@@ -175,12 +174,10 @@
         }
     }
 
-    function jsRemoveSelectedItemFromSelect(objSelect) {
+    function jsRemoveItemFromSelect(objSelect) {
         var length = objSelect.options.length - 1;
         for(var i = length; i >= 0; i--){
-            if(objSelect[i].selected == true){
-                objSelect.options[i] = null;
-            }
+            objSelect.options[i] = null;
         }
     }
 

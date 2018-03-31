@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be6e5c6d-3ae1-4784-848c-38f41db2fccd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/check.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logIn.php" />
-      <change beforePath="$PROJECT_DIR$/index2.0.php" afterPath="$PROJECT_DIR$/index2.0.php" />
+      <change beforePath="$PROJECT_DIR$/check.php" afterPath="$PROJECT_DIR$/check.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,13 +46,31 @@
           <file leaf-file-name="check.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/check.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="80">
-                  <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+                <state relative-caret-position="-83">
+                  <caret line="151" column="48" lean-forward="false" selection-start-line="151" selection-start-column="48" selection-end-line="151" selection-end-column="48" />
                   <folding>
-                    <marker date="1522519925377" expanded="true" signature="215:945" ph="..." />
-                    <marker date="1522519925377" expanded="true" signature="7480:7493" ph="SELECT * Fro... " />
-                    <marker date="1522519925377" expanded="true" signature="7480:7494" ph="SELECT * Fro... Department" />
+                    <marker date="1522521204068" expanded="true" signature="215:943" ph="..." />
+                    <marker date="1522521204068" expanded="true" signature="7286:7299" ph="SELECT * Fro... " />
+                    <marker date="1522521204068" expanded="true" signature="7286:7300" ph="SELECT * Fro... Department" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="workOn" pinned="false" current-in-tab="false">
+            <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.workOn">
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                <state>
+                  <filtering enabled="true" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SuperviseOf" pinned="false" current-in-tab="false">
+            <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.SuperviseOf">
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                <state>
+                  <filtering enabled="true" />
                 </state>
               </provider>
             </entry>
@@ -174,12 +190,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1522504397133</updated>
-      <workItem from="1522504398207" duration="12697000" />
+      <workItem from="1522504398207" duration="14264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12697000" />
+    <option name="totallyTimeSpent" value="14264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1080" extended-state="0" />
@@ -345,12 +361,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        <state relative-caret-position="-83">
+          <caret line="151" column="48" lean-forward="false" selection-start-line="151" selection-start-column="48" selection-end-line="151" selection-end-column="48" />
           <folding>
-            <marker date="1522519925377" expanded="true" signature="215:945" ph="..." />
-            <marker date="1522519925377" expanded="true" signature="7480:7493" ph="SELECT * Fro... " />
-            <marker date="1522519925377" expanded="true" signature="7480:7494" ph="SELECT * Fro... Department" />
+            <marker date="1522521204068" expanded="true" signature="215:943" ph="..." />
+            <marker date="1522521204068" expanded="true" signature="7286:7299" ph="SELECT * Fro... " />
+            <marker date="1522521204068" expanded="true" signature="7286:7300" ph="SELECT * Fro... Department" />
           </folding>
         </state>
       </provider>
