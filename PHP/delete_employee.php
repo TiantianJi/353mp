@@ -17,8 +17,8 @@ $dbConnection = mysqli_connect('localhost', $username, $password, 'Main');
 </head>
 <body>
 <?php
-$employee_id=$_GET['employee_id'];
-$query = "DELETE FROM employee WHERE SIN = employee_id";
+$employee_sin=$_GET['employee_sin'];
+$query = "DELETE FROM employee WHERE SIN = $employee_sin";
 if (mysqli_query($query, $dbConnection))
     echo "EMPLOYEE REMOVE SUCCESSFUL!<br>";
 else
