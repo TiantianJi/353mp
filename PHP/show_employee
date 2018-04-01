@@ -17,13 +17,8 @@ $dbConnection = mysqli_connect('localhost', $username, $password, 'Main');
 <h3>Show Employee</h3>
         <form id = "show_employee" name = "show_employee" method="post" action="select_employee.php">
             SIN:<input type="text" name="show_employee_name"/><br/>
-            <?php
-        $query = "Select * from EMPLOYEE";// need to know which table it is
-        $result = mysqli_query($query, $dbConnection);
-        while($rows = mysqli_fetch_row($result)){
-            echo "<option value=".$rows[0].">".$rows[1]."</option>";
-        }
-        ?>
+           
+        
             <br/>
         <input type="submit" value="show"/>
         </form>
