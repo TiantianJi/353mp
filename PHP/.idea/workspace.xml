@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be6e5c6d-3ae1-4784-848c-38f41db2fccd" name="Default" comment="" />
+    <list default="true" id="be6e5c6d-3ae1-4784-848c-38f41db2fccd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/check.php" afterPath="$PROJECT_DIR$/check.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,40 +42,80 @@
   <component name="FileEditorManager">
     <splitter split-orientation="vertical" split-proportion="0.8490566">
       <split-first>
-        <leaf>
-          <file leaf-file-name="check.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/check.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-83">
-                  <caret line="151" column="48" lean-forward="false" selection-start-line="151" selection-start-column="48" selection-end-line="151" selection-end-column="48" />
-                  <folding>
-                    <marker date="1522521204068" expanded="true" signature="215:943" ph="..." />
-                    <marker date="1522521204068" expanded="true" signature="7286:7299" ph="SELECT * Fro... " />
-                    <marker date="1522521204068" expanded="true" signature="7286:7300" ph="SELECT * Fro... Department" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="workOn" pinned="false" current-in-tab="false">
-            <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.workOn">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SuperviseOf" pinned="false" current-in-tab="false">
-            <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.SuperviseOf">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf>
+              <file leaf-file-name="check.php" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/check.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="633">
+                      <caret line="214" column="26" lean-forward="false" selection-start-line="214" selection-start-column="26" selection-end-line="214" selection-end-column="26" />
+                      <folding>
+                        <marker date="1522542173469" expanded="true" signature="249:977" ph="..." />
+                        <marker date="1522542173469" expanded="true" signature="7522:7536" ph="SELECT * Fro... ${$from}" />
+                        <marker date="1522542173469" expanded="true" signature="7522:7543" ph="SELECT * Fro... ${$from}" />
+                        <marker date="1522542173469" expanded="true" signature="7584:7614" ph="SELECT * Fro... ${$from}" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="assigned" pinned="false" current-in-tab="false">
+                <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.assigned">
+                  <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                    <state>
+                      <filtering enabled="true" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="workOn" pinned="false" current-in-tab="false">
+                <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.workOn">
+                  <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                    <state>
+                      <filtering enabled="true" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="SuperviseOf" pinned="false" current-in-tab="false">
+                <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.SuperviseOf">
+                  <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                    <state>
+                      <filtering enabled="true" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Department" pinned="false" current-in-tab="false">
+                <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.Department">
+                  <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                    <state>
+                      <filtering enabled="true" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="index2.0.php" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/index2.0.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="896">
+                      <caret line="56" column="1" lean-forward="false" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+                      <folding>
+                        <marker date="1522513777534" expanded="true" signature="1462:1524" ph="INSERT INTO USERINFO... " />
+                        <marker date="1522513777534" expanded="true" signature="1855:1877" ph="SELECT * FRO... USERINFO" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-first>
       <split-second>
         <leaf>
@@ -188,12 +230,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1522504397133</updated>
-      <workItem from="1522504398207" duration="14448000" />
+      <workItem from="1522504398207" duration="16015000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14448000" />
+    <option name="totallyTimeSpent" value="16015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1080" extended-state="0" />
@@ -247,24 +289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.assigned">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index2.0.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="804">
-          <caret line="56" column="1" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="56" selection-end-column="1" />
-          <folding>
-            <marker date="1522513777534" expanded="true" signature="1462:1524" ph="INSERT INTO USERINFO... " />
-            <marker date="1522513777534" expanded="true" signature="1855:1877" ph="SELECT * FRO... USERINFO" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logIn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
@@ -274,13 +298,6 @@
       </provider>
     </entry>
     <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.changedBy">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.Department">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -357,14 +374,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index2.0.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="56" column="1" lean-forward="false" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+          <folding>
+            <marker date="1522513777534" expanded="true" signature="1462:1524" ph="INSERT INTO USERINFO... " />
+            <marker date="1522513777534" expanded="true" signature="1855:1877" ph="SELECT * FRO... USERINFO" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.Department">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/44453212/9dfbb01c-7f37-484f-bd61-c8995524712e/Main.assigned">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/check.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="151" column="48" lean-forward="false" selection-start-line="151" selection-start-column="48" selection-end-line="151" selection-end-column="48" />
+        <state relative-caret-position="633">
+          <caret line="214" column="26" lean-forward="false" selection-start-line="214" selection-start-column="26" selection-end-line="214" selection-end-column="26" />
           <folding>
-            <marker date="1522521204068" expanded="true" signature="215:943" ph="..." />
-            <marker date="1522521204068" expanded="true" signature="7286:7299" ph="SELECT * Fro... " />
-            <marker date="1522521204068" expanded="true" signature="7286:7300" ph="SELECT * Fro... Department" />
+            <marker date="1522542173469" expanded="true" signature="249:977" ph="..." />
+            <marker date="1522542173469" expanded="true" signature="7522:7536" ph="SELECT * Fro... ${$from}" />
+            <marker date="1522542173469" expanded="true" signature="7522:7543" ph="SELECT * Fro... ${$from}" />
+            <marker date="1522542173469" expanded="true" signature="7584:7614" ph="SELECT * Fro... ${$from}" />
           </folding>
         </state>
       </provider>

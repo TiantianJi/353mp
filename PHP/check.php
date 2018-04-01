@@ -4,6 +4,7 @@
 </head>
 <body>
 <form method="post" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
+    <label for = '1'>From</label>
     <select name='1' id = '1' onchange="setSelect2(document.getElementById('1'))">
         <option value="none"> ---------- </option>
         <option value="assigned">assigned</option>
@@ -21,10 +22,13 @@
         <option value="workOn">workOn</option>
     </select>
 
+    <label for="2">Select</label>
     <select name="2" id = '2'>
         <option> ---------- </option>
-
     </select>
+
+    <label for="Where">Condition: </label>
+    <input type="text", id="Where" name="where"/>
     <input type="submit" value="Submit" name="submit"/>
 </form>
 </body>
@@ -190,7 +194,14 @@
     if (isset($_POST['submit']))
     {
         $from = $_POST['1'];
-        $query = "SELECT * From ".$from;
+        $where = $_POST['where'];
+        if (empty($where))
+        {
+            $query = "SELECT * From ".$from;
+        } else {
+            $query = "SELECT * From ".$from." Where ". $where;
+        }
+
         $select = $_POST['2'];
 
         $result = $dbConnection->query($query);
@@ -201,7 +212,7 @@
                 echo $select .': '. $row[$select]. "<br>";
             }
         } else {
-            echo "0 结果";
+            echo "empty.";
         }
     }
 
