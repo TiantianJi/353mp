@@ -189,7 +189,7 @@
 <?php
     $username = $_COOKIE['username'];
     $password = $_COOKIE['password'];
-    $dbConnection = mysqli_connect('localhost', $username, $password, 'Main');
+    $dbConnection = mysqli_connect('localhost', $username, $password, 'Main'); //根据电脑环境,自由配置
 
     if (isset($_POST['submit']))
     {

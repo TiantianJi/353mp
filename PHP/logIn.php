@@ -40,16 +40,16 @@
 
     function LogInDB() // this function will check the validation of username and password, if invalid, throw exception.
     {
-        define('DB_HOST', 'localhost');
+        define('DB_HOST', 'localhost');//根据电脑环境,自由配置
         define('DB_USER', $_POST['username']);
         define('DB_PASS', $_POST['Password']);
-        define('DB_NAME', 'Main');
+        define('DB_NAME', 'Main');//根据电脑环境,自由配置
         try{
             $dbConnection = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             if (!$dbConnection) {
                 throw new mysqli_sql_exception;
             }else{
-                header("location: http://localhost:63342/PHP/check.php");
+                header("location: http://localhost:63342/PHP/check.php");//根据电脑环境,自由配置
                 setcookie('username', $_POST['username']);
                 setcookie('password', $_POST['Password']);
                 exit;
