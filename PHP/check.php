@@ -4,6 +4,10 @@
 </head>
 <body>
 <form method="post" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
+    <label for="2">Select</label>
+    <select name="2" id = '2'>
+        <option> ---------- </option>
+    </select>
     <label for = '1'>From</label>
     <select name='1' id = '1' onchange="setSelect2(document.getElementById('1'))">
         <option value="none"> ---------- </option>
@@ -22,12 +26,10 @@
         <option value="workOn">workOn</option>
     </select>
 
-    <label for="2">Select</label>
-    <select name="2" id = '2'>
+    <label for="Where">Where: </label>
+    <select name="3" id="3">
         <option> ---------- </option>
     </select>
-
-    <label for="Where">Condition: </label>
     <input type="text", id="Where" name="where"/>
     <input type="submit" value="Submit" name="submit"/>
 </form>
@@ -38,30 +40,43 @@
     function setSelect2(sel) {
         if ('assigned' === sel.options[sel.selectedIndex].text){
             setAssigned(document.getElementById('2'));
+            setAssigned(document.getElementById('3'));
         }else if ('changedBy' === sel.options[sel.selectedIndex].text){
             setchangedBy(document.getElementById('2'));
+            setchangedBy(document.getElementById('3'));
         }else if ('Department' === sel.options[sel.selectedIndex].text){
             setDepartment(document.getElementById('2'));
+            setDepartment(document.getElementById('3'));
         }else if ('Dependent' === sel.options[sel.selectedIndex].text){
             setDependent(document.getElementById('2'));
+            setDependent(document.getElementById('3'));
         }else if ('Employees' === sel.options[sel.selectedIndex].text){
             setEmployees(document.getElementById('2'));
+            setEmployees(document.getElementById('3'));
         }else if ('Location' === sel.options[sel.selectedIndex].text){
             setLocation(document.getElementById('2'));
+            setLocation(document.getElementById('3'));
         }else if ('manage' === sel.options[sel.selectedIndex].text){
             setmanage(document.getElementById('2'));
+            setmanage(document.getElementById('3'));
         }else if ('Project' === sel.options[sel.selectedIndex].text){
             setProject(document.getElementById('2'));
+            setProject(document.getElementById('3'));
         }else if ('related' === sel.options[sel.selectedIndex].text){
             setrelated(document.getElementById('2'));
+            setrelated(document.getElementById('3'));
         }else if ('situated' === sel.options[sel.selectedIndex].text){
             setsituated(document.getElementById('2'));
+            setsituated(document.getElementById('3'));
         }else if ('SuperviseOf' === sel.options[sel.selectedIndex].text){
             setSuerviseOf(document.getElementById('2'));
+            setSuerviseOf(document.getElementById('3'));
         }else if ('workIn' === sel.options[sel.selectedIndex].text){
             setworkIn(document.getElementById('2'));
+            setworkIn(document.getElementById('3'));
         }else if ('workOn' === sel.options[sel.selectedIndex].text){
             setworkOn(document.getElementById('2'));
+            setworkOn(document.getElementById('3'));
         }
     }
 
@@ -194,12 +209,13 @@
     if (isset($_POST['submit']))
     {
         $from = $_POST['1'];
+        $condition = $_POST['3'];
         $where = $_POST['where'];
         if (empty($where))
         {
             $query = "SELECT * From ".$from;
         } else {
-            $query = "SELECT * From ".$from." Where ". $where;
+            $query = "SELECT * From ".$from." Where ".$condition. $where;
         }
 
         $select = $_POST['2'];
