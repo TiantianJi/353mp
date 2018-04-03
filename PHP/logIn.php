@@ -1,18 +1,45 @@
 <html>
 <head>
-    <title>LogIn page</title>
+    <style>
+body {
+    font-size: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+h1 {
+    margin-top: 100px;
+    text-align: center;
+    color: black;
+        }
+
+h3{ color: black;
+    text-align: center;
+    font-family: verdana;}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+    text-align: center;
+}
+
+</style>
+    <h1>Company Management System<h1><br/>
 </head>
 <body>
+    
+    <h3>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> <!--user need to key in the username and password of database.-->
     <label for = "username">UserName:</label>
-    <input type="text", id="username" name="username"/><br/>
-    <label for = "Password">Password:</label>
-    <input type="password", id="Password" name="Password"><br/>
-    <input type="submit" value="Submit" name="Submit">
+    <input type="text", id="username" name="username"/><br/><br>
+    <label for = "Password">Password :</label>
+    <input type="password", id="Password" name="Password"><br/><br>
+    <input type="submit" value="log in" name="Submit" style="width: 100px; margin: 0 auto;" />
+    
 </form>
-
-
+</h3>
 </body>
+
 </html>
 <?php
     if (isset($_POST['Submit'])) // if user press the submit button isset will return true.
