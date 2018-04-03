@@ -1,0 +1,181 @@
+﻿/*导航栏相关*/
+/*Support for 360browser*/
+.cus_navbar
+{
+	font-family:"微软雅黑","华文细黑",Arial, Helvetica, sans-serif;
+}
+
+.cus_navbar:hover
+{
+	font-weight:bold;
+}
+
+.navbar_blocker
+{
+	margin-top:65px;
+}
+
+/*新任务的块背景*/
+.newtask
+{
+	margin:2px 2px 2px 2px;
+	padding:12px 12px;
+	background:url(../images/background/new_tasks_fix.png)  no-repeat;
+	box-shadow: 0 0 70px 100px rgb(237, 237, 240) inset;
+	background-color:rgb(237,237,240);
+	border-radius:3px;
+}
+/*任务大厅的块背景*/
+.taskcenter
+{
+	margin:2px 2px 2px 2px;
+	padding:12px 12px;
+	background:url(../images/background/task_center_fix.png) fixed no-repeat;
+	background-origin:content-box;
+	box-shadow: 0 0 70px 100px rgb(237, 237, 240) inset;
+	background-color:rgb(237,237,240);
+	border-radius:3px;
+	
+}
+
+
+/*任务大厅背景*/
+.newtask
+{
+	margin:2px 2px 2px 2px;
+	padding:12px 12px;
+	background:url(../images/background/new_tasks_fix.png)  no-repeat;
+	box-shadow: 0 0 70px 100px rgb(237, 237, 240) inset;
+	background-color:rgb(237,237,240);
+	border-radius:3px;
+}
+
+
+/*每一行的元素定义*/
+.newtask_block
+{
+	margin:10px 4px;
+	padding:5px 10px;
+	background:rgba(0,0,255,0.15);
+	border-radius: 3px;
+}
+/*任务大厅*/
+.task_center
+{
+}
+/*任务大厅的单个任务*/
+.task_block
+{
+	margin:5px 2px;
+	padding:5px 5px;
+}
+
+.task_block.VIP
+{
+	border:1px dotted rgb(213,186,0);
+	color:rgb(213,186,0);
+}
+
+.task_block.VIP:hover
+{
+	border:1px dotted rgb(213,186,0);
+	background:rgba(213,186,0,0.15);
+	color:rgb(213,186,0);
+}
+
+.task_block.accept
+{
+	background-color:rgba(0,128,0,0.05);
+}
+
+.task_block.finished
+{
+	background-color:rgba(0,0,0,0.05);
+}
+
+.task_block.doing
+{
+	background-color:rgba(255,204,0,0.05);
+}
+
+
+
+/*索引栏，比如帮助左侧的索引*/
+.index_navbar
+{
+	padding:8px 15px;
+	border-radius:3px;
+	background-color:rgba(0,0,255,0.05);
+}
+.index_navbar
+{
+	color:rgb(0,0,0);
+}
+.index_navbar:hover
+{
+	background-color:rgba(0,0,255,0.1);
+}
+/*边栏中活跃的当前内容*/
+.active_slideritem
+{
+	font-weight:bold;
+	color:rgb(0,0,0);
+}
+.active_slideritem:hover
+{
+	background-color:inherit;
+}
+.help_content
+{
+	background:url(../images/background/help_content.jpg) fixed no-repeat;
+}
+
+/*详细任务背景*/
+.taskinf_detail
+{
+	padding: 10px 10px;
+	background:url(../images/background/task_detail.png) fixed no-repeat;
+	border-radius:5px;
+	}
+
+.taskinformation
+{
+	margin:10px 2px;
+	padding:12px 12px;
+	background-color:rgb(237,237,240);
+	border-radius:3px;
+}
+
+.taskacceptinformation
+{
+	margin:10px 2px;
+	padding:12px 12px;
+	background-color:rgb(220,216,213);
+	border-radius:3px;
+}
+
+.taskacceptinformation.VIP
+{
+	border:1px dotted rgb(208,183,0);
+	font-weight:bold;
+	background-color:rgba(255,227,32,0.5);
+	color:rgb(213,186,0);
+}
+
+.tasknewaccept
+{
+	margin:10px 2px;
+	padding:12px 12px;
+	background-color:rgba(0,128,0,0.25);
+	border-radius:3px;
+}
+
+/*每一行的元素定义*/
+.taskparticipant
+{
+	margin:10px 4px;
+	padding:5px 10px;
+	background:rgba(0,0,255,0.15);
+	border-radius: 3px;
+}
+
