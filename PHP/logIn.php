@@ -25,7 +25,7 @@ p {
 
 </style>
     <h1>Company Management System<h1><br/>
-</head>
+</h1>
 <body>
     
     <h3>
