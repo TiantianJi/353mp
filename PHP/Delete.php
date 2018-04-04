@@ -1,11 +1,12 @@
 <html>
 <head>
-    <title>Information check</title>
+    <title>Delete</title>
 </head>
 <body>
-<form method="post" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
-    <label for = '1'>From</label>
-    <select name='1' id = '1' onchange="setSelect2(document.getElementById('1'))">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <label>Delete </label>
+    <label>From</label>
+    <select name="From" id="From" onchange="setWhere(document.getElementById('From'))">
         <option value="none"> ---------- </option>
         <option value="assigned">assigned</option>
         <option value="changedBy">changedBy</option>
@@ -21,81 +22,44 @@
         <option value="workIn">workIn</option>
         <option value="workOn">workOn</option>
     </select>
-    <label for="2">Select 1</label>
-    <select name="2" id = '2'>
-        <option> ---------- </option>
-    </select>
-    <label for="4">Select 2</label>
-    <select name="4" id = '4'>
-        <option> ---------- </option>
-    </select>
-    <label for="Where">Where: </label>
-    <select name="3" id="3">
-        <option> ---------- </option>
-    </select>
-    <input type="text", id="Where" name="where"/>
-    <input type="submit" value="Submit" name="submit"/>
-</form>
 
-
+    <label>Where</label>
+    <select name="where" id='where'>
+        <option value="none"> ---------- </option>
+    </select>
+    <input type="text", id="Condition" name="Condition"/>
+    <input type="submit", value="Submit" name="submit"/>
 </form>
 </body>
 </html>
-
 <script>
-    function setSelect2(sel) {
+    function setWhere(sel) {
         if ('assigned' === sel.options[sel.selectedIndex].text){
-            setAssigned(document.getElementById('2'));
-            setAssigned(document.getElementById('3'));
-            setAssigned(document.getElementById('4'));
+            setAssigned(document.getElementById('where'));
         }else if ('changedBy' === sel.options[sel.selectedIndex].text){
-            setchangedBy(document.getElementById('2'));
-            setchangedBy(document.getElementById('3'));
-            setchangedBy(document.getElementById('4'));
+            setchangedBy(document.getElementById('where'));
         }else if ('Department' === sel.options[sel.selectedIndex].text){
-            setDepartment(document.getElementById('2'));
-            setDepartment(document.getElementById('3'));
-            setDepartment(document.getElementById('4'));
+            setDepartment(document.getElementById('where'));
         }else if ('Dependent' === sel.options[sel.selectedIndex].text){
-            setDependent(document.getElementById('2'));
-            setDependent(document.getElementById('3'));
-            setDependent(document.getElementById('4'));
+            setDependent(document.getElementById('where'));
         }else if ('Employees' === sel.options[sel.selectedIndex].text){
-            setEmployees(document.getElementById('2'));
-            setEmployees(document.getElementById('3'));
-            setEmployees(document.getElementById('4'));
+            setEmployees(document.getElementById('where'));
         }else if ('Location' === sel.options[sel.selectedIndex].text){
-            setLocation(document.getElementById('2'));
-            setLocation(document.getElementById('3'));
-            setLocation(document.getElementById('4'));
+            setLocation(document.getElementById('where'));
         }else if ('manage' === sel.options[sel.selectedIndex].text){
-            setmanage(document.getElementById('2'));
-            setmanage(document.getElementById('3'));
-            setmanage(document.getElementById('4'));
+            setmanage(document.getElementById('where'));
         }else if ('Project' === sel.options[sel.selectedIndex].text){
-            setProject(document.getElementById('2'));
-            setProject(document.getElementById('3'));
-            setProject(document.getElementById('4'));
+            setProject(document.getElementById('where'));
         }else if ('related' === sel.options[sel.selectedIndex].text){
-            setrelated(document.getElementById('2'));
-            setrelated(document.getElementById('3'));
-            setrelated(document.getElementById('4'));
+            setrelated(document.getElementById('where'));
         }else if ('situated' === sel.options[sel.selectedIndex].text){
-            setsituated(document.getElementById('2'));
-            setsituated(document.getElementById('3'));
-            setsituated(document.getElementById('4'));
+            setsituated(document.getElementById('where'));
         }else if ('SuperviseOf' === sel.options[sel.selectedIndex].text){
-            setSuerviseOf(document.getElementById('2'));
-            setSuerviseOf(document.getElementById('3'));
-            setSuerviseOf(document.getElementById('4'));
+            setSuerviseOf(document.getElementById('where'));
         }else if ('workIn' === sel.options[sel.selectedIndex].text){
-            setworkIn(document.getElementById('2'));
-            setworkIn(document.getElementById('3'));
-            setworkIn(document.getElementById('4'));
+            setworkIn(document.getElementById('where'));
         }else if ('workOn' === sel.options[sel.selectedIndex].text){
-            setworkOn(document.getElementById('2'));
-            setworkOn(document.getElementById('3'));
-            setworkOn(document.getElementById('4'));
+            setworkOn(document.getElementById('where'));
         }
     }
 
@@ -197,7 +161,6 @@
         jsAddItemToSelect(objSelect, 'ESIN', 'ESIN');
         jsAddItemToSelect(objSelect, 'hours', 'hours');
     }
-
     function jsSelectIsExitItem(objSelect, objItemValue) {
         var isExit = false;
         for (var i = 0; i < objSelect.options.length; i++) {
@@ -233,41 +196,21 @@
 
     if (isset($_POST['submit']))
     {
-        $from = $_POST['1'];
-        $condition = $_POST['3'];
-        $where = $_POST['where'];
-        if (empty($where))
+        $From = $_POST['From'];
+        $Where = $_POST['where'];
+        $Condition = $_POST['Condition'];
+        $query = '';
+
+        if (empty($Condition) or empty($Where))
         {
-            $query = "SELECT * From ".$from;
+            $query = "DELETE FROM ".$From;
+            $dbConnection->query($query);
         } else {
-            $query = "SELECT * From ".$from." Where ".$condition. $where;
-        }
-
-        $select1 = $_POST['2'];
-        $select2 = $_POST['4'];
-
-
-        $result = $dbConnection->query($query);
-        if ($result->num_rows > 0) {
-            if (!empty($select2))
+            $query = "DELETE FROM ".$From." WHERE ".$Where.$Condition;
+            $result = $dbConnection->query($query);
+            if (empty($result))
             {
-                echo "<br>";
-                while($row = $result->fetch_assoc()) {
-                    echo $condition.$where."\t|\t";
-                    echo $select1 .': '. $row[$select1]."|".$select2 .': '. $row[$select2]."<br>";
-                }
+                echo "Error,  a foreign key constraint fails.";
             }
-            else{
-                // 输出数据
-                echo "<br>";
-                while($row = $result->fetch_assoc()) {
-                    echo $condition.$where."\t|\t";
-                    echo $select1 .': '. $row[$select1]."<br>";
-                }
-            }
-        } else {
-            echo "empty.";
         }
     }
-
-
