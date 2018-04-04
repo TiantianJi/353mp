@@ -4,10 +4,6 @@
 </head>
 <body>
 <form method="post" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
-    <label for="2">Select</label>
-    <select name="2" id = '2'>
-        <option> ---------- </option>
-    </select>
     <label for = '1'>From</label>
     <select name='1' id = '1' onchange="setSelect2(document.getElementById('1'))">
         <option value="none"> ---------- </option>
@@ -25,13 +21,23 @@
         <option value="workIn">workIn</option>
         <option value="workOn">workOn</option>
     </select>
-
+    <label for="2">Select 1</label>
+    <select name="2" id = '2'>
+        <option> ---------- </option>
+    </select>
+    <label for="4">Select 2</label>
+    <select name="4" id = '4'>
+        <option> ---------- </option>
+    </select>
     <label for="Where">Where: </label>
     <select name="3" id="3">
         <option> ---------- </option>
     </select>
     <input type="text", id="Where" name="where"/>
     <input type="submit" value="Submit" name="submit"/>
+</form>
+
+
 </form>
 </body>
 </html>
@@ -41,47 +47,61 @@
         if ('assigned' === sel.options[sel.selectedIndex].text){
             setAssigned(document.getElementById('2'));
             setAssigned(document.getElementById('3'));
+            setAssigned(document.getElementById('4'));
         }else if ('changedBy' === sel.options[sel.selectedIndex].text){
             setchangedBy(document.getElementById('2'));
             setchangedBy(document.getElementById('3'));
+            setchangedBy(document.getElementById('4'));
         }else if ('Department' === sel.options[sel.selectedIndex].text){
             setDepartment(document.getElementById('2'));
             setDepartment(document.getElementById('3'));
+            setDepartment(document.getElementById('4'));
         }else if ('Dependent' === sel.options[sel.selectedIndex].text){
             setDependent(document.getElementById('2'));
             setDependent(document.getElementById('3'));
+            setDependent(document.getElementById('4'));
         }else if ('Employees' === sel.options[sel.selectedIndex].text){
             setEmployees(document.getElementById('2'));
             setEmployees(document.getElementById('3'));
+            setEmployees(document.getElementById('4'));
         }else if ('Location' === sel.options[sel.selectedIndex].text){
             setLocation(document.getElementById('2'));
             setLocation(document.getElementById('3'));
+            setLocation(document.getElementById('4'));
         }else if ('manage' === sel.options[sel.selectedIndex].text){
             setmanage(document.getElementById('2'));
             setmanage(document.getElementById('3'));
+            setmanage(document.getElementById('4'));
         }else if ('Project' === sel.options[sel.selectedIndex].text){
             setProject(document.getElementById('2'));
             setProject(document.getElementById('3'));
+            setProject(document.getElementById('4'));
         }else if ('related' === sel.options[sel.selectedIndex].text){
             setrelated(document.getElementById('2'));
             setrelated(document.getElementById('3'));
+            setrelated(document.getElementById('4'));
         }else if ('situated' === sel.options[sel.selectedIndex].text){
             setsituated(document.getElementById('2'));
             setsituated(document.getElementById('3'));
+            setsituated(document.getElementById('4'));
         }else if ('SuperviseOf' === sel.options[sel.selectedIndex].text){
             setSuerviseOf(document.getElementById('2'));
             setSuerviseOf(document.getElementById('3'));
+            setSuerviseOf(document.getElementById('4'));
         }else if ('workIn' === sel.options[sel.selectedIndex].text){
             setworkIn(document.getElementById('2'));
             setworkIn(document.getElementById('3'));
+            setworkIn(document.getElementById('4'));
         }else if ('workOn' === sel.options[sel.selectedIndex].text){
             setworkOn(document.getElementById('2'));
             setworkOn(document.getElementById('3'));
+            setworkOn(document.getElementById('4'));
         }
     }
 
     function setAssigned(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'place', 'place');
     }
@@ -89,24 +109,28 @@
     function setchangedBy(objSelect) {
         alert(3);
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'DNumber', 'DNumber');
     }
 
     function setchangedBy(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'DNumber', 'DNumber');
     }
 
     function setDepartment(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'DepartmentNumber', 'DepartmentNumber');
         jsAddItemToSelect(objSelect, 'DepartmentName', 'DepartmentName');
     }
 
     function setDependent(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'DependentSIN', 'DependentSIN');
         jsAddItemToSelect(objSelect, 'dependentName', 'dependentName');
         jsAddItemToSelect(objSelect, 'dBirthDate', 'dBirthDate');
@@ -115,6 +139,7 @@
 
     function setEmployees(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'SIN', 'SIN');
         jsAddItemToSelect(objSelect, 'Name', 'Name');
         jsAddItemToSelect(objSelect, 'birthDate', 'birthDate');
@@ -126,11 +151,13 @@
 
     function setLocation(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'place', 'place');
     }
 
     function setmanage(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'DNumber', 'DNumber')
         jsAddItemToSelect(objSelect, 'SIN', 'SIN');
         jsAddItemToSelect(objSelect, 'StarDate', 'StarDate');
@@ -138,36 +165,42 @@
 
     function setProject(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'PIN', 'PIN');
         jsAddItemToSelect(objSelect, 'PName', 'PName');
     }
 
     function setrelated(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'DependentSIN', 'DependentSIN');
         jsAddItemToSelect(objSelect, 'SIN', 'SIN');
     }
 
     function setsituated(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'place', 'place');
         jsAddItemToSelect(objSelect, 'DepartmentNumber', 'DepartmentNumber');
     }
 
     function setSuerviseOf(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'EmployeeSIN', 'EmployeeSIN');
         jsAddItemToSelect(objSelect, 'SupervisorSIN', 'SupervisorSIN');
     }
 
     function setworkIn(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'SIN', 'SIN');
         jsAddItemToSelect(objSelect, 'DNumber', 'DNumber');
     }
 
     function setworkOn(objSelect) {
         jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'SIN', 'SIN');
         jsAddItemToSelect(objSelect, 'hours', 'hours');
@@ -218,14 +251,27 @@
             $query = "SELECT * From ".$from." Where ".$condition. $where;
         }
 
-        $select = $_POST['2'];
+        $select1 = $_POST['2'];
+        $select2 = $_POST['4'];
+
 
         $result = $dbConnection->query($query);
         if ($result->num_rows > 0) {
-            // 输出数据
-            echo "<br>";
-            while($row = $result->fetch_assoc()) {
-                echo $select .': '. $row[$select]. "<br>";
+            if (!empty($select2))
+            {
+                echo "<br>";
+                while($row = $result->fetch_assoc()) {
+                    echo $condition.$where."\t|\t";
+                    echo $select1 .': '. $row[$select1]."|".$select2 .': '. $row[$select2]."<br>";
+                }
+            }
+            else{
+                // 输出数据
+                echo "<br>";
+                while($row = $result->fetch_assoc()) {
+                    echo $condition.$where."\t|\t";
+                    echo $select1 .': '. $row[$select1]."<br>";
+                }
             }
         } else {
             echo "empty.";
