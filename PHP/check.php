@@ -3,23 +3,27 @@
     <title>Information check</title>
 </head>
 <body>
+<input type="button" value="Delete" onclick="location.href='http://localhost:63343/PHP/Delete.php'">
+<input type="button" value="Insert" onclick="location.href='http://localhost:63343/PHP/Insert.php'">
+
+
 <form method="post" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
     <label for = '1'>From</label>
     <select name='1' id = '1' onchange="setSelect2(document.getElementById('1'))">
         <option value="none"> ---------- </option>
-        <option value="assigned">assigned</option>
-        <option value="changedBy">changedBy</option>
         <option value="Department">Department</option>
         <option value="Dependent">Dependent</option>
         <option value="Employees">Employees</option>
         <option value="Location">Location</option>
-        <option value="manage">manage</option>
         <option value="Project">Project</option>
-        <option value="related">related</option>
-        <option value="situated">situated</option>
-        <option value="SuperviseOf">SuperviseOf</option>
-        <option value="workIn">workIn</option>
-        <option value="workOn">workOn</option>
+        <option value="assigned">Project assigned Location</option>
+        <option value="chargedBy">Project chargedBy Department</option>
+        <option value="manage">Employee manage Department</option>
+        <option value="related">Dependent related Employee</option>
+        <option value="situated">Department situated Location</option>
+        <option value="SuperviseOf">Supervisor SuperviseOf Employee</option>
+        <option value="workIn">Employee workIn Department</option>
+        <option value="workOn">Employee workOn Project</option>
     </select>
     <label for="2">Select 1</label>
     <select name="2" id = '2'>
@@ -44,55 +48,55 @@
 
 <script>
     function setSelect2(sel) {
-        if ('assigned' === sel.options[sel.selectedIndex].text){
+        if ('assigned' === sel.options[sel.selectedIndex].value){
             setAssigned(document.getElementById('2'));
             setAssigned(document.getElementById('3'));
             setAssigned(document.getElementById('4'));
-        }else if ('changedBy' === sel.options[sel.selectedIndex].text){
-            setchangedBy(document.getElementById('2'));
-            setchangedBy(document.getElementById('3'));
-            setchangedBy(document.getElementById('4'));
-        }else if ('Department' === sel.options[sel.selectedIndex].text){
+        }else if ('changedBy' === sel.options[sel.selectedIndex].value){
+            setchargedBy(document.getElementById('2'));
+            setchargedBy(document.getElementById('3'));
+            setchargedBy(document.getElementById('4'));
+        }else if ('Department' === sel.options[sel.selectedIndex].value){
             setDepartment(document.getElementById('2'));
             setDepartment(document.getElementById('3'));
             setDepartment(document.getElementById('4'));
-        }else if ('Dependent' === sel.options[sel.selectedIndex].text){
+        }else if ('Dependent' === sel.options[sel.selectedIndex].value){
             setDependent(document.getElementById('2'));
             setDependent(document.getElementById('3'));
             setDependent(document.getElementById('4'));
-        }else if ('Employees' === sel.options[sel.selectedIndex].text){
+        }else if ('Employees' === sel.options[sel.selectedIndex].value){
             setEmployees(document.getElementById('2'));
             setEmployees(document.getElementById('3'));
             setEmployees(document.getElementById('4'));
-        }else if ('Location' === sel.options[sel.selectedIndex].text){
+        }else if ('Location' === sel.options[sel.selectedIndex].value){
             setLocation(document.getElementById('2'));
             setLocation(document.getElementById('3'));
             setLocation(document.getElementById('4'));
-        }else if ('manage' === sel.options[sel.selectedIndex].text){
+        }else if ('manage' === sel.options[sel.selectedIndex].value){
             setmanage(document.getElementById('2'));
             setmanage(document.getElementById('3'));
             setmanage(document.getElementById('4'));
-        }else if ('Project' === sel.options[sel.selectedIndex].text){
+        }else if ('Project' === sel.options[sel.selectedIndex].value){
             setProject(document.getElementById('2'));
             setProject(document.getElementById('3'));
             setProject(document.getElementById('4'));
-        }else if ('related' === sel.options[sel.selectedIndex].text){
+        }else if ('related' === sel.options[sel.selectedIndex].value){
             setrelated(document.getElementById('2'));
             setrelated(document.getElementById('3'));
             setrelated(document.getElementById('4'));
-        }else if ('situated' === sel.options[sel.selectedIndex].text){
+        }else if ('situated' === sel.options[sel.selectedIndex].value){
             setsituated(document.getElementById('2'));
             setsituated(document.getElementById('3'));
             setsituated(document.getElementById('4'));
-        }else if ('SuperviseOf' === sel.options[sel.selectedIndex].text){
+        }else if ('SuperviseOf' === sel.options[sel.selectedIndex].value){
             setSuerviseOf(document.getElementById('2'));
             setSuerviseOf(document.getElementById('3'));
             setSuerviseOf(document.getElementById('4'));
-        }else if ('workIn' === sel.options[sel.selectedIndex].text){
+        }else if ('workIn' === sel.options[sel.selectedIndex].value){
             setworkIn(document.getElementById('2'));
             setworkIn(document.getElementById('3'));
             setworkIn(document.getElementById('4'));
-        }else if ('workOn' === sel.options[sel.selectedIndex].text){
+        }else if ('workOn' === sel.options[sel.selectedIndex].value){
             setworkOn(document.getElementById('2'));
             setworkOn(document.getElementById('3'));
             setworkOn(document.getElementById('4'));
@@ -106,10 +110,10 @@
         jsAddItemToSelect(objSelect, 'Place', 'Place');
     }
 
-    function setchangedBy(objSelect) {
+    function setchargedBy(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
-        jsAddItemToSelect(objSelect, 'PID', 'PID');
+        jsAddItemToSelect(objSelect, 'Project ID', 'PID');
         jsAddItemToSelect(objSelect, 'Department Number', 'DepartmentNumber');
     }
 
@@ -227,9 +231,7 @@
 
 </script>
 <?php
-    $username = $_COOKIE['username'];
-    $password = $_COOKIE['password'];
-    $dbConnection = mysqli_connect('localhost', $username, $password, 'Main'); //根据电脑环境,自由配置
+    $dbConnection = mysqli_connect('localhost', 'root', '????', 'Main'); //根据电脑环境,自由配置
 
     if (isset($_POST['submit']))
     {
@@ -270,4 +272,4 @@
         }
     }
 
-
+?>

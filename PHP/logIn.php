@@ -76,10 +76,7 @@ p {
             if (!$dbConnection) {
                 throw new mysqli_sql_exception;
             }else{
-                header("location: http://localhost:63343/PHP/check.php");//根据电脑环境,自由配置
-                setcookie('username', $_POST['username']);
-                setcookie('password', $_POST['Password']);
-                exit;
+                echo "<script>window.location.href='localhost:63343/PHP/check.php'</script>";
             }
         }catch (mysqli_sql_exception $e)
         {
