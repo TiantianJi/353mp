@@ -35,6 +35,7 @@
 
 <script>
     function divChange(sel) {
+        document.getElementById("input").innerHTML="";
         if ('assigned' === sel.options[sel.selectedIndex].value){
             addText('text','Project ID','PID');
             addText('text','Place','Place');
