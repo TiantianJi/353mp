@@ -5,6 +5,7 @@
 <body>
 <input type="button" value="Check" onclick="location.href='http://localhost:63343/PHP/check.php'">
 <input type="button" value="Delete" onclick="location.href='http://localhost:63343/PHP/Delete.php'">
+<input type="button" value="Update" onclick="location.href='http://localhost:63343/PHP/Update.php'">
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
     <select name='select' id = 'select' onchange="divChange(document.getElementById('select'))">
@@ -258,7 +259,7 @@
                 {
                     throw new mysqli_sql_exception("Please fill all the information.");
                 } else {
-                    $query = "INSERT INTO ".$from." VALUE(".$Place.",".$Departmentnumber.")";
+                    $query = "INSERT INTO ".$from." VALUE(".$Place.",".$Departmentnumber.");";
                     $result = $dbConnection->query($query);
                     if (empty($result))
                     {

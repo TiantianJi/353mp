@@ -5,6 +5,7 @@
 <body>
 <input type="button" value="Check" onclick="location.href='http://localhost:63343/PHP/check.php'">
 <input type="button" value="Insert" onclick="location.href='http://localhost:63343/PHP/Insert.php'">
+<input type="button" value="Update" onclick="location.href='http://localhost:63343/PHP/Update.php'">
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <label>Delete </label>
