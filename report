@@ -9,7 +9,9 @@ In progress of building the system, an E/R relationship model is presented to ex
 
 
 Since both department and project have location, we upgrade it to an entity, and created relation between location and department/project.
-
+We picked SIN as key of Emploees
+We picked DNumber as key of Department
+...
 
 
 
@@ -31,7 +33,9 @@ No trivial dependencies found
 
 5.	User Interface
 
+Here is the login page of the management system
 
+Once loged in, users could choose to search, add, delete or  update tuples by entering certain attributes.
 
 
 
