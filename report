@@ -1,0 +1,38 @@
+
+1.	Introduction
+The purpose of this project is to design a web-based database of a company management system using MySQL and PHP to set relations in between different components such as Employees, Department and projects, and keep track of the performances. 
+
+In progress of building the system, an E/R relationship model is presented to explain relationship of entities. To enhance the system performance in long run, we decomposed the relations into 3NF. Constraints during creating system are listed to better understand the inner system structure. A brief introduction on our user interface is provided to help users getting on to it. Test data and some example queries are provided. 
+
+
+2.	E/R Model
+
+
+Since both department and project have location, we upgrade it to an entity, and created relation between location and department/project.
+
+
+
+
+3.	Convert to 3NF:
+
+For all tuples with single key, they are already in 3NF, so no need to convert.
+For table workOn, (PID, ESIN) -> hours, 3NF
+For Dependent, 
+             (DSIN, ESIN) -> dependentName , 3NF
+             (DSIN, ESIN) -> dependentBirthday, 3NF
+             (DSIN, ESIN) ->  dependentGender, 3NF
+So all relations are in 3NF
+
+No trivial dependencies found
+
+
+4.	List of tables and constraints
+
+
+5.	User Interface
+
+
+
+
+
+
