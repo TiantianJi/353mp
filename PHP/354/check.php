@@ -97,7 +97,7 @@ h3{ font-family: verdana;
             setAssigned(document.getElementById('2'));
             setAssigned(document.getElementById('3'));
             setAssigned(document.getElementById('4'));
-        }else if ('changedBy' === sel.options[sel.selectedIndex].value){
+        }else if ('chargedBy' === sel.options[sel.selectedIndex].value){
             setchargedBy(document.getElementById('2'));
             setchargedBy(document.getElementById('3'));
             setchargedBy(document.getElementById('4'));
@@ -151,6 +151,7 @@ h3{ font-family: verdana;
     function setAssigned(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'Project ID', 'PID');
         jsAddItemToSelect(objSelect, 'Place', 'Place');
     }
@@ -158,6 +159,7 @@ h3{ font-family: verdana;
     function setchargedBy(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'Project ID', 'PID');
         jsAddItemToSelect(objSelect, 'Department Number', 'DepartmentNumber');
     }
@@ -165,6 +167,7 @@ h3{ font-family: verdana;
     function setDepartment(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'Department Number', 'DepartmentNumber');
         jsAddItemToSelect(objSelect, 'Department Name', 'DepartmentName');
     }
@@ -172,15 +175,17 @@ h3{ font-family: verdana;
     function setDependent(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'SIN', 'DependentSIN');
         jsAddItemToSelect(objSelect, 'Name', 'DependentName');
         jsAddItemToSelect(objSelect, 'BirthDate', 'DBirthDate');
-        jsAddItemToSelect(objSelect, 'Gender', 'DGender');
+        jsAddItemToSelect(objSelect, 'Gender', 'DdGender');
     }
 
     function setEmployees(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'SIN', 'ESIN');
         jsAddItemToSelect(objSelect, 'Name', 'EName');
         jsAddItemToSelect(objSelect, 'birthDate', 'EbirthDate');
@@ -193,20 +198,23 @@ h3{ font-family: verdana;
     function setLocation(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'Place', 'Place');
     }
 
     function setmanage(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'Department Number', 'DepartmentNumber')
         jsAddItemToSelect(objSelect, 'Employee SIN', 'ESIN');
-        jsAddItemToSelect(objSelect, 'StarDate', 'StarDate');
+        jsAddItemToSelect(objSelect, 'StartDate', 'StartDate');
     }
 
     function setProject(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'Project Name', 'PName');
     }
@@ -214,6 +222,7 @@ h3{ font-family: verdana;
     function setrelated(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'Dependent SIN', 'DependentSIN');
         jsAddItemToSelect(objSelect, 'Employee SIN', 'ESIN');
     }
@@ -221,6 +230,7 @@ h3{ font-family: verdana;
     function setsituated(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'Place', 'Place');
         jsAddItemToSelect(objSelect, 'DepartmentNumber', 'DepartmentNumber');
     }
@@ -228,6 +238,7 @@ h3{ font-family: verdana;
     function setSuerviseOf(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'EmployeeSIN', 'ESIN');
         jsAddItemToSelect(objSelect, 'SupervisorSIN', 'SSIN');
     }
@@ -235,6 +246,7 @@ h3{ font-family: verdana;
     function setworkIn(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'Employee SIN', 'ESIN');
         jsAddItemToSelect(objSelect, 'Department Number', 'DepartmentNumber');
     }
@@ -242,9 +254,10 @@ h3{ font-family: verdana;
     function setworkOn(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'ESIN', 'ESIN');
-        jsAddItemToSelect(objSelect, 'hours', 'hours');
+        jsAddItemToSelect(objSelect, 'Hours', 'Hours');
     }
 
     function jsSelectIsExitItem(objSelect, objItemValue) {
@@ -295,26 +308,140 @@ h3{ font-family: verdana;
 
 
         $result = $dbConnection->query($query);
-        if ($result->num_rows > 0) {
-            if (!empty($select2))
-            {
-                echo "<br>";
-                while($row = $result->fetch_assoc()) {
-                    echo $condition.$where."\t|\t";
-                    echo $select1 .': '. $row[$select1]."|".$select2 .': '. $row[$select2]."<br>";
+        try{
+            if ($result->num_rows > 0) {
+                if ($select1==='*')
+                {
+                    if ($from === "Department"){
+                        echo "<br>";
+                        echo "Department Number | Department Name";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["DepartmentNumber"]."\t | \t".$row["DepartmentName"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "Dependent"){
+                        echo "<br>";
+                        echo "SIN | Name | BirthDate | Gender";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["DependentSIN"]."\t | \t".$row["DependentName"]."\t | \t".$row["DBirthDate"]."\t | \t".$row["DdGender"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "Employees"){
+                        echo "<br>";
+                        echo "SIN | Name | birthDate | address | Gender | phoneNumber | salary";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["ESIN"]."\t | \t".$row["EName"]."\t | \t".$row["EbirthDate"]."\t | \t".$row["Eaddress"]."\t | \t".$row["Egender"]."\t | \t".$row["EphoneNumber"]."\t | \t".$row["Esalary"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "Location"){
+                        echo "<br>";
+                        echo "Place";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["Place"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "Project"){
+                        echo "<br>";
+                        echo "PID | Project Name";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["PID"]."\t | \t".$row["PName"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "assigned"){
+                        echo "<br>";
+                        echo "Project ID | Place";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["PID"]."\t | \t".$row["Place"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "chargedBy"){
+                        echo "<br>";
+                        echo "Project ID | Department Number";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["PID"]."\t | \t".$row["DepartmentNumber"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "manage"){
+                        echo "<br>";
+                        echo "Department Number | Employee SIN | StartDate";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["DepartmentNumber"]."\t | \t".$row["ESIN"]."\t | \t".$row["StartDate"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "related"){
+                        echo "<br>";
+                        echo "Dependent SIN | Employee SIN";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["DependentSIN"]."\t | \t".$row["ESIN"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "situated"){
+                        echo "<br>";
+                        echo "Place | DepartmentNumber";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["Place"]."\t | \t".$row["DepartmentNumber"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "SuperviseOf"){
+                        echo "<br>";
+                        echo "EmployeeSIN | SupervisorSIN";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["ESIN"]."\t | \t".$row["SSIN"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "workIn"){
+                        echo "<br>";
+                        echo "Employee SIN | Department Number";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["ESIN"]."\t | \t".$row["DepartmentNumber"];
+                            echo "<br>";
+                        }
+                    }else if ($from === "workOn"){
+                        echo "<br>";
+                        echo "PID | Employee SIN | Hours";
+                        echo "<br>";
+                        while($row = $result->fetch_assoc()) {
+                            echo $row["PID"]."\t | \t".$row["ESIN"]."\t | \t".$row["Hours"];
+                            echo "<br>";
+                        }
+                    }
                 }
-            }
-            else{
-                // 输出数据
-                echo "<br>";
-                while($row = $result->fetch_assoc()) {
-                    echo $condition.$where."\t|\t";
-                    echo $select1 .': '. $row[$select1]."<br>";
+                else if (!empty($select2))
+                {
+                    echo "<br>";
+                    while($row = $result->fetch_assoc()) {
+                        echo $condition.$where."\t|\t";
+                        echo $select1 .': '. $row[$select1]."|".$select2 .': '. $row[$select2]."<br>";
+                    }
                 }
+                else{
+                    // 输出数据
+                    echo "<br>";
+                    while($row = $result->fetch_assoc()) {
+                        echo $condition.$where."\t|\t";
+                        echo $select1 .': '. $row[$select1]."<br>";
+                    }
+                }
+            } else {
+                echo "empty.";
             }
-        } else {
-            echo "empty.";
+        } catch (mysqli_sql_exception $e)
+        {
+
         }
+
     }
 
 ?>
