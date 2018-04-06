@@ -98,9 +98,6 @@ h3{ font-family: verdana;
         }else if ('Employees' === sel.options[sel.selectedIndex].value){
             setEmployees(document.getElementById('NAtt'));
             setEmployees(document.getElementById('where'));
-        }else if ('Location' === sel.options[sel.selectedIndex].value){
-            setLocation(document.getElementById('NAtt'));
-            setLocation(document.getElementById('where'));
         }else if ('manage' === sel.options[sel.selectedIndex].value){
             setmanage(document.getElementById('NAtt'));
             setmanage(document.getElementById('where'));
@@ -142,14 +139,12 @@ h3{ font-family: verdana;
     function setDepartment(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
-        jsAddItemToSelect(objSelect, 'Department Number', 'DepartmentNumber');
         jsAddItemToSelect(objSelect, 'Department Name', 'DepartmentName');
     }
 
     function setDependent(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
-        jsAddItemToSelect(objSelect, 'SIN', 'DependentSIN');
         jsAddItemToSelect(objSelect, 'Name', 'DependentName');
         jsAddItemToSelect(objSelect, 'BirthDate', 'DBirthDate');
         jsAddItemToSelect(objSelect, 'Gender', 'DGender');
@@ -158,7 +153,6 @@ h3{ font-family: verdana;
     function setEmployees(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
-        jsAddItemToSelect(objSelect, 'SIN', 'ESIN');
         jsAddItemToSelect(objSelect, 'Name', 'EName');
         jsAddItemToSelect(objSelect, 'birthDate', 'EbirthDate');
         jsAddItemToSelect(objSelect, 'address', 'Eaddress');
@@ -170,7 +164,6 @@ h3{ font-family: verdana;
     function setLocation(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
-        jsAddItemToSelect(objSelect, 'Place', 'Place');
     }
 
     function setmanage(objSelect) {
@@ -184,7 +177,6 @@ h3{ font-family: verdana;
     function setProject(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
-        jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'Project Name', 'PName');
     }
 

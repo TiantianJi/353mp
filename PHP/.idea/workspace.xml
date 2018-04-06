@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be6e5c6d-3ae1-4784-848c-38f41db2fccd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Insert.php" afterPath="$PROJECT_DIR$/Insert.php" />
+      <change beforePath="$PROJECT_DIR$/354/Update.php" afterPath="$PROJECT_DIR$/354/Update.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,10 +46,10 @@
         <splitter split-orientation="horizontal" split-proportion="0.5">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="Delete.php" pinned="false" current-in-tab="true">
+              <file leaf-file-name="Delete.php" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/Delete.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="16">
+                    <state relative-caret-position="128">
                       <caret line="8" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
                       <folding>
                         <marker date="1522899262549" expanded="true" signature="8497:8509" ph="DELETE FROM ${$From}... " />
@@ -69,10 +69,10 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="Update.php" pinned="false" current-in-tab="false">
+              <file leaf-file-name="Update.php" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/Update.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="3520">
+                    <state relative-caret-position="916">
                       <caret line="220" column="8" lean-forward="false" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
                       <folding />
                     </state>
@@ -114,11 +114,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Insert.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Insert.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Insert.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="592">
-                  <caret line="37" column="54" lean-forward="false" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+                <state relative-caret-position="192">
+                  <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
                   <folding>
                     <marker date="1522940385916" expanded="true" signature="5171:5219" ph="INSERT INTO ${$from}... " />
                     <marker date="1522940385916" expanded="true" signature="5910:5969" ph="INSERT INTO ${$from}... " />
@@ -134,6 +134,53 @@
                     <marker date="1522940385916" expanded="true" signature="13903:13963" ph="INSERT INTO ${$from}... " />
                     <marker date="1522940385916" expanded="true" signature="14684:14756" ph="INSERT INTO ${$from}... " />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Delete.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/354/Delete.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <marker date="1522972614808" expanded="true" signature="9275:9287" ph="DELETE FROM ${$From}... " />
+                    <marker date="1522972614808" expanded="true" signature="9377:9405" ph="DELETE FROM ${$From}... " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Insert.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/354/Insert.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <marker date="1522972614808" expanded="true" signature="6059:6107" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="6798:6857" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="7582:7652" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="8496:8594" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="9591:9724" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="10330:10369" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="11124:11200" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="11855:11903" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="12581:12637" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="13333:13394" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="14053:14101" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="14791:14851" ph="INSERT INTO ${$from}... " />
+                    <marker date="1522972614808" expanded="true" signature="15572:15644" ph="INSERT INTO ${$from}... " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Update.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/354/Update.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="354">
+                  <caret line="100" column="9" lean-forward="false" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -167,6 +214,7 @@
         <option value="$PROJECT_DIR$/Delete.php" />
         <option value="$PROJECT_DIR$/check.php" />
         <option value="$PROJECT_DIR$/Insert.php" />
+        <option value="$PROJECT_DIR$/354/Update.php" />
       </list>
     </option>
   </component>
@@ -200,6 +248,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,12 +257,15 @@
               <item name="PHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="PHP" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="PHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHP" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="354" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,18 +305,19 @@
       <workItem from="1522681125335" duration="4605000" />
       <workItem from="1522804010289" duration="3587000" />
       <workItem from="1522846110125" duration="22114000" />
-      <workItem from="1522935744201" duration="361000" />
+      <workItem from="1522935744201" duration="1668000" />
+      <workItem from="1522984844636" duration="322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48836000" />
+    <option name="totallyTimeSpent" value="50465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08181096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.082208104" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -297,31 +351,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-          <folding>
-            <marker date="1522899262549" expanded="true" signature="8497:8509" ph="DELETE FROM ${$From}... " />
-            <marker date="1522899262549" expanded="true" signature="8599:8627" ph="DELETE FROM ${$From}... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/delete_employee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logIn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -640,17 +669,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3520">
-          <caret line="220" column="8" lean-forward="false" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
+        <state relative-caret-position="128">
           <caret line="8" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <marker date="1522899262549" expanded="true" signature="8497:8509" ph="DELETE FROM ${$From}... " />
@@ -674,8 +695,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Insert.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="37" column="54" lean-forward="false" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+        <state relative-caret-position="192">
+          <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
           <folding>
             <marker date="1522940385916" expanded="true" signature="5171:5219" ph="INSERT INTO ${$from}... " />
             <marker date="1522940385916" expanded="true" signature="5910:5969" ph="INSERT INTO ${$from}... " />
@@ -691,6 +712,55 @@
             <marker date="1522940385916" expanded="true" signature="13903:13963" ph="INSERT INTO ${$from}... " />
             <marker date="1522940385916" expanded="true" signature="14684:14756" ph="INSERT INTO ${$from}... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="916">
+          <caret line="220" column="8" lean-forward="false" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/354/Delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1522972614808" expanded="true" signature="9275:9287" ph="DELETE FROM ${$From}... " />
+            <marker date="1522972614808" expanded="true" signature="9377:9405" ph="DELETE FROM ${$From}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/354/Insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1522972614808" expanded="true" signature="6059:6107" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="6798:6857" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="7582:7652" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="8496:8594" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="9591:9724" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="10330:10369" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="11124:11200" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="11855:11903" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="12581:12637" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="13333:13394" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="14053:14101" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="14791:14851" ph="INSERT INTO ${$from}... " />
+            <marker date="1522972614808" expanded="true" signature="15572:15644" ph="INSERT INTO ${$from}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/354/Update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="100" column="9" lean-forward="false" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
