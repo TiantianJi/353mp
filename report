@@ -16,6 +16,21 @@ We picked DNumber as key of Department
 
 3. Convert ER to Relation
 
+
+Employees(SIN, Name, birthDate, address, gender, phoneNumber, salary)
+SuperviseOf(SIN, Name, birthDate, address, gender, phoneNumber, salary)
+Dependent(DSIN, ESIN, dependentName, dBirthDate, dGender)
+Department(DNumber, DName)
+Project(PID, PName)
+Location(place)
+assigned(PID, place)
+situated(place, DNumber)
+chargedBy(PID, DNumber)
+workOn(PID, ESIN, hours)
+workIn(ESIN, DNumber)
+manage(DNumber, ESIN, StartDate)
+
+
 4.	Convert to 3NF:
 
 For all tuples with single key, they are already in 3NF, so no need to convert.
