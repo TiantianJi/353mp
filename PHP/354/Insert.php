@@ -86,7 +86,8 @@ h3{ font-family: verdana;
             addText('text','Department Number', 'DepartmentNumber');
             addText('text','Department Name', 'DepartmentName');
         }else if ('Dependent' === sel.options[sel.selectedIndex].value){
-            addText('text','SIN', 'DependentSIN');
+            addText('text','Dependent SIN', 'DependentSIN');
+            addText('text','Employees SIN','ESIN')
             addText('text','Name', 'DependentName');
             addText('text','BirthDate', 'DBirthDate');
             addText('text','Gender', 'DGender');
@@ -191,14 +192,15 @@ h3{ font-family: verdana;
                 }
             }else if ('Dependent' === $from){
                 $DependentSIN = $_POST['DependentSIN'];
+                $EmployeesSIN = $_POST['ESIN'];
                 $DependentName = $_POST['DependentName'];
                 $DBirthDate = $_POST['DBirthDate'];
                 $DGender = $_POST['DGender'];
-                if (empty($DependentSIN)||empty($DependentName)||empty($DBirthDate)||empty($DGender))
+                if (empty($DependentSIN)||empty($EmployeesSIN)||empty($DependentName)||empty($DBirthDate)||empty($DGender))
                 {
                     throw new mysqli_sql_exception("Please fill all the information.");
                 } else {
-                    $query = "INSERT INTO ".$from." VALUE(".$DependentSIN.",".$DependentName.","."$DBirthDate".","."$DGender".")";
+                    $query = "INSERT INTO ".$from." VALUE(".$DependentSIN.",".$EmployeesSIN.",".$DependentName.","."$DBirthDate".","."$DGender".")";
                     $result = $dbConnection->query($query);
                     if (empty($result))
                     {

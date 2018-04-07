@@ -177,6 +177,7 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'SIN', 'DependentSIN');
+        jsAddItemToSelect(objSelect, 'Employees SIN', 'ESIN');
         jsAddItemToSelect(objSelect, 'Name', 'DependentName');
         jsAddItemToSelect(objSelect, 'BirthDate', 'DBirthDate');
         jsAddItemToSelect(objSelect, 'Gender', 'DdGender');
@@ -322,10 +323,10 @@ h3{ font-family: verdana;
                         }
                     }else if ($from === "Dependent"){
                         echo "<br>";
-                        echo "SIN | Name | BirthDate | Gender";
+                        echo "SIN | ESIN | Name | BirthDate | Gender";
                         echo "<br>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["DependentSIN"]."\t | \t".$row["DependentName"]."\t | \t".$row["DBirthDate"]."\t | \t".$row["DdGender"];
+                            echo $row["DependentSIN"]."\t | \t".$row["ESIN"]."\t | \t".$row["DependentName"]."\t | \t".$row["DBirthDate"]."\t | \t".$row["DdGender"];
                             echo "<br>";
                         }
                     }else if ($from === "Employees"){

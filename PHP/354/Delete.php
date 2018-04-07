@@ -133,7 +133,8 @@ h3{ font-family: verdana;
     function setDependent(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
-        jsAddItemToSelect(objSelect, 'SIN', 'DependentSIN');
+        jsAddItemToSelect(objSelect, 'Dependent SIN', 'DependentSIN');
+        jsAddItemToSelect(objSelect, 'Employees SIN','ESIN')
         jsAddItemToSelect(objSelect, 'Name', 'DependentName');
         jsAddItemToSelect(objSelect, 'BirthDate', 'DBirthDate');
         jsAddItemToSelect(objSelect, 'Gender', 'DGender');
@@ -255,6 +256,8 @@ h3{ font-family: verdana;
             if (empty($result))
             {
                 echo "Error,  a foreign key constraint fails.";
+            } else {
+                echo "Delete succeed.";
             }
         }
     }
