@@ -14,8 +14,9 @@ We picked DNumber as key of Department
 ...
 
 
+3. Convert ER to Relation
 
-3.	Convert to 3NF:
+4.	Convert to 3NF:
 
 For all tuples with single key, they are already in 3NF, so no need to convert.
 For table workOn, (PID, ESIN) -> hours, 3NF
@@ -28,10 +29,109 @@ So all relations are in 3NF
 No trivial dependencies found
 
 
-4.	List of tables and constraints
 
 
-5.	User Interface
+5.	List of tables and constraints
+CREATE TABLE Employees(
+  SIN INTEGER(40) NOT NULL PRIMARY KEY,
+  Name VARCHAR(40) NOT NULL ,
+  birthDate DATE NOT NULL ,
+  address VARCHAR(60),
+  gender ENUM('M', 'F') DEFAULT 'F',
+  phoneNumber BIGINT,
+  salary DOUBLE UNSIGNED DEFAULT 0
+);
+
+
+CREATE TABLE SuperviseOf(
+  EmployeeSIN INTEGER(40) NOT NULL PRIMARY KEY ,
+  SupervisorSIN INTEGER(40) NOT NULL,
+  FOREIGN KEY (EmployeeSIN) REFERENCES Employees(SIN),
+  FOREIGN KEY (SupervisorSIN) REFERENCES Employees(SIN)
+);
+
+
+CREATE TABLE Dependent(
+  DependentSIN INTEGER(40) NOT NULL,
+  ESIN INTEGER(40) NOT NULL,
+  FOREIGN KEY(ESIN) REFERENCES EMPLOYEES(SIN),
+  dependentName VARCHAR(40) NOT NULL,
+  dBirthDate DATE,
+  dGender ENUM('M', 'F') DEFAULT 'F',
+  PRIMARY KEY(DependentSIN, ESIN)
+); //相应test data 要改
+
+CREATE TABLE Department(
+  DepartmentNumber INTEGER(40) NOT NULL PRIMARY KEY,
+  DepartmentName VARCHAR(40) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE Project(
+  PID INTEGER(40) NOT NULL PRIMARY KEY,
+  PName VARCHAR(40) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE Location(
+  place VARCHAR(40) NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE assigned(
+  PID INTEGER(40) NOT NULL PRIMARY KEY,
+  place VARCHAR(40),
+  FOREIGN KEY (PID) REFERENCES Project(PID),
+  FOREIGN KEY (place) REFERENCES Location(place)
+);
+
+CREATE TABLE situated(
+  place VARCHAR(40) NOT NULL PRIMARY KEY ,
+  DepartmentNumber INTEGER(40) NOT NULL,
+  FOREIGN KEY (place) REFERENCES Location(place),
+  FOREIGN KEY (DepartmentNumber) REFERENCES Department(DepartmentNumber)
+);
+
+CREATE TABLE changedBy (
+  PID     INTEGER(40) NOT NULL PRIMARY KEY ,
+  DNumber INTEGER(40) NOT NULL ,
+  FOREIGN KEY (PID) REFERENCES Project (PID),
+  FOREIGN KEY (DNumber) REFERENCES Department (DepartmentNumber)
+);
+
+CREATE TABLE workOn(
+  PID INTEGER(40) NOT NULL ,
+  SIN INTEGER(40) NOT NULL ,
+  hours DOUBLE,
+  PRIMARY KEY (PID, SIN),
+  FOREIGN KEY (PID) REFERENCES Project(PID),
+  FOREIGN KEY (SIN) REFERENCES Employees(SIN)
+);
+
+CREATE TABLE workIn(
+  SIN INTEGER(40) NOT NULL PRIMARY KEY ,
+  DNumber INTEGER(40) NOT NULL ,
+  FOREIGN KEY (SIN) REFERENCES Employees(SIN),
+  FOREIGN KEY (DNumber) REFERENCES Department(DepartmentNumber)
+);
+
+CREATE TABLE manage(
+  DNumber INTEGER(40) PRIMARY KEY,
+  SIN INTEGER(40),
+  StartDate DATE,
+  FOREIGN KEY (DNumber) REFERENCES Department(DepartmentNumber),
+  FOREIGN KEY (SIN) REFERENCES Employees(SIN)
+);
+
+CREATE TABLE related(
+  DependentSIN INTEGER(40) NOT NULL ,
+  SIN INTEGER(40) NOT NULL ,
+  FOREIGN KEY (SIN) REFERENCES Employees(SIN)
+);
+
+
+
+
+6.	User Interface
 
 Here is the login page of the management system
 
