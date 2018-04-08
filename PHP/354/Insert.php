@@ -79,7 +79,7 @@ h3{ font-family: verdana;
         if ('assigned' === sel.options[sel.selectedIndex].value){
             addText('text','Project ID','PID');
             addText('text','Place','Place');
-        }else if ('changedBy' === sel.options[sel.selectedIndex].value){
+        }else if ('chargedBy' === sel.options[sel.selectedIndex].value){
             addText('text','Project ID','PID');
             addText('text','Department Number','DepartmentNumber');
         }else if ('Department' === sel.options[sel.selectedIndex].value){

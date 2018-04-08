@@ -91,19 +91,19 @@ h3{ font-family: verdana;
             setchargedBy(document.getElementById('where'));
         }else if ('Department' === sel.options[sel.selectedIndex].value){
             setDepartment(document.getElementById('NAtt'));
-            setDepartment(document.getElementById('where'));
+            setDepartmentWhere(document.getElementById('where'));
         }else if ('Dependent' === sel.options[sel.selectedIndex].value){
             setDependent(document.getElementById('NAtt'));
-            setDependent(document.getElementById('where'));
+            setDependentWhere(document.getElementById('where'));
         }else if ('Employees' === sel.options[sel.selectedIndex].value){
             setEmployees(document.getElementById('NAtt'));
-            setEmployees(document.getElementById('where'));
+            setEmployeesWhere(document.getElementById('where'));
         }else if ('manage' === sel.options[sel.selectedIndex].value){
             setmanage(document.getElementById('NAtt'));
             setmanage(document.getElementById('where'));
         }else if ('Project' === sel.options[sel.selectedIndex].value){
             setProject(document.getElementById('NAtt'));
-            setProject(document.getElementById('where'));
+            setProjectWhere(document.getElementById('where'));
         }else if ('related' === sel.options[sel.selectedIndex].value){
             setrelated(document.getElementById('NAtt'));
             setrelated(document.getElementById('where'));
@@ -142,6 +142,13 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect, 'Department Name', 'DepartmentName');
     }
 
+    function setDepartmentWhere(objSelect) {
+        jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'Department Number', 'DepartmentNumber');
+        jsAddItemToSelect(objSelect, 'Department Name', 'DepartmentName');
+    }
+
     function setDependent(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
@@ -150,9 +157,31 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect, 'Gender', 'DGender');
     }
 
+    function setDependentWhere(objSelect) {
+        jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect,'Dependent SIN', 'DependentSIN');
+        jsAddItemToSelect(objSelect,'Employees SIN','ESIN')
+        jsAddItemToSelect(objSelect, 'Name', 'DependentName');
+        jsAddItemToSelect(objSelect, 'BirthDate', 'DBirthDate');
+        jsAddItemToSelect(objSelect, 'Gender', 'DGender');
+    }
+
     function setEmployees(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'Name', 'EName');
+        jsAddItemToSelect(objSelect, 'birthDate', 'EbirthDate');
+        jsAddItemToSelect(objSelect, 'address', 'Eaddress');
+        jsAddItemToSelect(objSelect, 'gender', 'Egender');
+        jsAddItemToSelect(objSelect, 'phoneNumber', 'EphoneNumber');
+        jsAddItemToSelect(objSelect, 'salary', 'Esalary');
+    }
+
+    function setEmployeesWhere(objSelect) {
+        jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'SIN', 'ESIN');
         jsAddItemToSelect(objSelect, 'Name', 'EName');
         jsAddItemToSelect(objSelect, 'birthDate', 'EbirthDate');
         jsAddItemToSelect(objSelect, 'address', 'Eaddress');
@@ -177,6 +206,13 @@ h3{ font-family: verdana;
     function setProject(objSelect) {
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'Project Name', 'PName');
+    }
+
+    function setProjectWhere(objSelect) {
+        jsRemoveItemFromSelect(objSelect);
+        jsAddItemToSelect(objSelect, '', '');
+        jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'Project Name', 'PName');
     }
 
