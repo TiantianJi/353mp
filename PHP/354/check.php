@@ -38,6 +38,21 @@ h3{ font-family: verdana;
     margin-top: 10px;
     text-align: center;}
 
+table {
+         font-family: arial, sans-serif;
+         border-collapse: collapse;
+         width: 100%;
+     }
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
 </style>
     <title>Information check</title>
 </head>
@@ -83,6 +98,8 @@ h3{ font-family: verdana;
     </select>
     <input type="text", id="Where" name="where"/><br>
     <button type="submit" class="btn" value="Search" name="submit"><i class="fa fa-search"></i> Search</button>
+    <button type="submit" name="query1" value="query1">all employee with highest to lowest salary</button>
+    <button type="submit" name="query2" value="query2">all employee working on more than 1 project or zero project</button>
 </form>
 </h3>
 
@@ -218,6 +235,7 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect, 'ALL', '*');
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'Project Name', 'PName');
+        jsAddItemToSelect(objSelect, 'Stage', 'Stage');
     }
 
     function setrelated(objSelect) {
@@ -292,6 +310,34 @@ h3{ font-family: verdana;
 <?php
     $dbConnection = mysqli_connect('localhost', 'root', '????', 'Main'); //根据电脑环境,自由配置
 
+    if (isset($_POST['query1']))
+    {
+        $query = "SELECT Ename, Esalary FROM Employees ORDER BY Esalary DESC";
+        $result = $dbConnection->query($query);
+        echo "<br>";
+        echo "<table>";
+        echo "<tr>"."<th>Name</th>"."<th>Salary</th>"."</tr>";
+        while($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<th>".$row["Ename"]."</th>"."<th>".$row["Esalary"]."</th>";
+            echo "</tr>";
+        }
+    }
+
+    if (isset($_POST['query2']))
+    {
+        $query = "SELECT Ename FROM Employees WHERE ESIN NOT IN(SELECT ESIN FROM workOn) OR ESIN = (SELECT ESIN FROM workOn GROUP BY ESIN HAVING COUNT(*) > 1);";
+        $result = $dbConnection->query($query);
+        echo "<br>";
+        echo "<table>";
+        echo "<tr>"."<th>Name</th>"."</tr>";
+        while($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<th>".$row["Ename"]."</th>"."</th>";
+            echo "</tr>";
+        }
+    }
+
     if (isset($_POST['submit']))
     {
         $from = $_POST['1'];
@@ -315,132 +361,161 @@ h3{ font-family: verdana;
                 {
                     if ($from === "Department"){
                         echo "<br>";
-                        echo "Department Number | Department Name";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>Department Number</th>"."<th>Department Name</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["DepartmentNumber"]."\t | \t".$row["DepartmentName"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["DepartmentNumber"]."</th>"."<th>".$row["DepartmentName"]."</th>";
+                            echo "</tr>";
                         }
                     }else if ($from === "Dependent"){
                         echo "<br>";
-                        echo "SIN | ESIN | Name | BirthDate | Gender";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>SIN</th>"."<th>ESIN</th>"."<th>Name</th>"."<th>BirthDate</th>"."<th>Gender</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["DependentSIN"]."\t | \t".$row["ESIN"]."\t | \t".$row["DependentName"]."\t | \t".$row["DBirthDate"]."\t | \t".$row["DdGender"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["DependentSIN"]."</th>"."<th>".$row["ESIN"]."</th>"."<th>".$row["DependentName"]."<th>".$row["DBirthDate"]."</th>"."<th>".$row["DdGender"]."</th>"."</th>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
                     }else if ($from === "Employees"){
                         echo "<br>";
-                        echo "SIN | Name | birthDate | address | Gender | phoneNumber | salary";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>SIN</th>"."<th>Name</th>"."<th>birthDate</th>"."<th>address</th>"."<th>Gender</th>"."<th>phoneNumber</th>"."<th>salary</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["ESIN"]."\t | \t".$row["EName"]."\t | \t".$row["EbirthDate"]."\t | \t".$row["Eaddress"]."\t | \t".$row["Egender"]."\t | \t".$row["EphoneNumber"]."\t | \t".$row["Esalary"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["ESIN"]."</th>"."<th>".$row["EName"]."</th>"."<th>".$row["EbirthDate"]."<th>".$row["Eaddress"]."</th>"."<th>".$row["Egender"]."</th>"."<th>".$row["EphoneNumber"]."</th>"."<th>".$row["Esalary"]."</th>"."</th>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
                     }else if ($from === "Location"){
                         echo "<br>";
-                        echo "Place";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>Place</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["Place"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["Place"]."</th>"."</th>";
+                            echo "</tr>";
                         }
                     }else if ($from === "Project"){
                         echo "<br>";
-                        echo "PID | Project Name";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>PID</th>"."<th>Project Name</th>"."<th>Stage</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["PID"]."\t | \t".$row["PName"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["PID"]."</th>"."<th>".$row["PName"]."</th>"."<th>".$row["Stage"]."</th>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
                     }else if ($from === "assigned"){
                         echo "<br>";
-                        echo "Project ID | Place";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>Project ID</th>"."<th>Place</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["PID"]."\t | \t".$row["Place"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["PID"]."</th>"."<th>".$row["Place"]."</th>";
+                            echo "</tr>";
                         }
                     }else if ($from === "chargedBy"){
                         echo "<br>";
-                        echo "Project ID | Department Number";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>Project ID</th>"."<th>Department Number</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["PID"]."\t | \t".$row["DepartmentNumber"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["PID"]."</th>"."<th>".$row["DepartmentNumber"]."</th>";
+                            echo "</tr>";
                         }
                     }else if ($from === "manage"){
                         echo "<br>";
-                        echo "Department Number | Employee SIN | StartDate";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>Department Number</th>"."<th>Employee SIN</th>"."<th>StartDate</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["DepartmentNumber"]."\t | \t".$row["ESIN"]."\t | \t".$row["StartDate"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["DepartmentNumber"]."</th>"."<th>".$row["ESIN"]."</th>"."<th>".$row["StartDate"]."</th>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
                     }else if ($from === "related"){
                         echo "<br>";
-                        echo "Dependent SIN | Employee SIN";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>Dependent SIN</th>"."<th>Employee SIN</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["DependentSIN"]."\t | \t".$row["ESIN"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["DependentSIN"]."</th>"."<th>".$row["ESIN"]."</th>";
+                            echo "</tr>";
                         }
                     }else if ($from === "situated"){
                         echo "<br>";
-                        echo "Place | DepartmentNumber";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>Place</th>"."<th>Department Number</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["Place"]."\t | \t".$row["DepartmentNumber"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["Place"]."</th>"."<th>".$row["DepartmentNumber"]."</th>";
+                            echo "</tr>";
                         }
                     }else if ($from === "SuperviseOf"){
                         echo "<br>";
-                        echo "EmployeeSIN | SupervisorSIN";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>Employee SIN</th>"."<th>Supervisor SIN</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["ESIN"]."\t | \t".$row["SSIN"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["ESIN"]."</th>"."<th>".$row["SSIN"]."</th>";
+                            echo "</tr>";
+                        }
                         }
                     }else if ($from === "workIn"){
                         echo "<br>";
-                        echo "Employee SIN | Department Number";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>Employee SIN</th>"."<th>Department Number</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["ESIN"]."\t | \t".$row["DepartmentNumber"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["ESIN"]."</th>"."<th>".$row["DepartmentNumber"]."</th>";
+                            echo "</tr>";
                         }
                     }else if ($from === "workOn"){
                         echo "<br>";
-                        echo "PID | Employee SIN | Hours";
-                        echo "<br>";
+                        echo "<table>";
+                        echo "<tr>"."<th>PID</th>"."<th>Employee SIN</th>"."<th>Hours</th>"."</tr>";
                         while($row = $result->fetch_assoc()) {
-                            echo $row["PID"]."\t | \t".$row["ESIN"]."\t | \t".$row["Hours"];
-                            echo "<br>";
+                            echo "<tr>";
+                            echo "<th>".$row["PID"]."</th>"."<th>".$row["ESIN"]."</th>"."<th>".$row["Hours"]."</th>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
                     }
-                }
-                else if (!empty($select2))
+                    else if (!empty($select2))
                 {
                     echo "<br>";
+                    echo "<table>";
                     while($row = $result->fetch_assoc()) {
-                        echo $condition.$where."\t|\t";
-                        echo $select1 .': '. $row[$select1]."|".$select2 .': '. $row[$select2]."<br>";
+                        echo "<tr>";
+                        echo "<th>".$condition.$where."</th>";
+                        echo "<th>".$select1 .': '. $row[$select1]."</th>"."<th>".$select2 .': '. $row[$select2]."</th>";
+                        echo "</tr>";
                     }
-                }
-                else{
+                    echo "</table>";
+                }else{
                     // 输出数据
                     echo "<br>";
+                    echo "<table>";
+
                     while($row = $result->fetch_assoc()) {
-                        echo $condition.$where."\t|\t";
-                        echo $select1 .': '. $row[$select1]."<br>";
+                        echo "<tr>";
+                        echo "<th>".$condition.$where."</th>";
+                        echo "<th>".$select1 .': '. $row[$select1]."</th>";
+                        echo "</tr>";
                     }
+
+                    echo "</table>";
                 }
-            } else {
-                echo "empty.";
+                } else {
+                throw new mysqli_sql_exception('empty');
             }
+
+
         } catch (mysqli_sql_exception $e)
         {
-
+            echo $e->getMessage();
         }
 
     }

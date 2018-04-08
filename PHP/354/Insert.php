@@ -108,6 +108,7 @@ h3{ font-family: verdana;
         }else if ('Project' === sel.options[sel.selectedIndex].value){
             addText('text','PID', 'PID');
             addText('text','Project Name', 'PName');
+            addText('text','Stage', 'Stage');
         }else if ('related' === sel.options[sel.selectedIndex].value){
             addText('text','Dependent SIN', 'DependentSIN');
             addText('text','Employee SIN', 'ESIN');
@@ -265,11 +266,12 @@ h3{ font-family: verdana;
             }else if ('Project' === $from){
                 $PID = $_POST['PID'];
                 $PName= $_POST['PName'];
-                if (empty($PID)||empty($PName))
+                $Stage= $_POST['Stage'];
+                if (empty($PID)||empty($PName)||empty($Stage))
                 {
                     throw new mysqli_sql_exception("Please fill all the information.");
                 } else {
-                    $query = "INSERT INTO ".$from." VALUE(".$PID.",".$PName.")";
+                    $query = "INSERT INTO ".$from." VALUE(".$PID.",".$PName.",".$Stage.")";
                     $result = $dbConnection->query($query);
                     if (empty($result))
                     {

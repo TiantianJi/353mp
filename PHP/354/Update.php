@@ -207,6 +207,7 @@ h3{ font-family: verdana;
         jsRemoveItemFromSelect(objSelect);
         jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'Project Name', 'PName');
+        jsAddItemToSelect(objSelect, 'Stage', 'Stage');
     }
 
     function setProjectWhere(objSelect) {
@@ -214,6 +215,7 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'Project Name', 'PName');
+        jsAddItemToSelect(objSelect, 'Stage', 'Stage');
     }
 
     function setrelated(objSelect) {

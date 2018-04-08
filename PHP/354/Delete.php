@@ -171,6 +171,7 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'PID', 'PID');
         jsAddItemToSelect(objSelect, 'Project Name', 'PName');
+
     }
 
     function setrelated(objSelect) {
