@@ -39,7 +39,8 @@ CREATE TABLE Department(
 
 CREATE TABLE Project(
   PID INTEGER(40) NOT NULL PRIMARY KEY,
-  PName VARCHAR(40) NOT NULL UNIQUE
+  PName VARCHAR(40) NOT NULL UNIQUE,
+  Stage ENUM('preliminary','intermediate','advanced','complete')
 );
 
 CREATE TABLE chargedBy (
@@ -93,106 +94,6 @@ CREATE TABLE workOn(
 
 
 
-INSERT INTO Employees VALUE (1,'jason','1995-04-22','188 boul de L\'Assomption, QC', 'M', 5149926186, 2999.4237);
-INSERT INTO Employees VALUE (2,'jason1', '1995-04-22', '188 boul de L\'Assomption, QC', 'M', 5149926186, 2999.4237);
-INSERT INTO Employees VALUE (3,'jason1', '1995-04-22', '188 boul de L\'Assomption, QC', 'M', 5149926186, 2999.4237);
-INSERT INTO Employees VALUE (4,'jason1', '1995-04-22', '188 boul de L\'Assomption, QC', 'M', 5149926186, 2999.4237);
-INSERT INTO Employees VALUE (5,'jason1', '1995-04-22', '188 boul de L\'Assomption, QC', 'M', 5149926186, 2999.4237);
-INSERT INTO Employees VALUE (6,'jason1', '1995-04-22', '188 boul de L\'Assomption, QC', 'M', 5149926186, 2999.4237);
-INSERT INTO Employees VALUE (7,'jason1', '1995-04-22', '188 boul de L\'Assomption, QC', 'M', 5149926186, 2999.4237);
-INSERT INTO Employees VALUE (8,'jason1', '1995-04-22', '188 boul de L\'Assomption, QC', 'M', 5149926186, 2999.4237);
-INSERT INTO Employees VALUE (9,'jason1', '1995-04-22', '188 boul de L\'Assomption, QC', 'M', 5149926186, 2999.4237);
-INSERT INTO Employees VALUE (10,'jason1', '1995-04-22', '188 boul de L\'Assomption, QC', 'M', 5149926186, 2999.4237);
-
-INSERT INTO Department VALUE (1, 'gaming');
-INSERT INTO Department VALUE (2, 'web');
-
-INSERT INTO Location VALUE ('101');
-INSERT INTO Location VALUE ('102');
-
-INSERT INTO Project VALUE (1, 'x');
-INSERT INTO Project VALUE (2, 't');
-INSERT INTO Project VALUE (3, 'website');
-
-INSERT INTO Dependent VALUE (1,1, 'tem', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (2,1, 'tem', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (3,1, 'tem', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (4,1, 'tem', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (5,2, 'tem', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (6,2, 'tem', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (7,2, 'tem', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (8,2, 'tem', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (9,2, 'tem', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (10,2, 'tem', '1993-03-23', 'F');
-
-INSERT INTO related VALUE (1, 1);
-INSERT INTO related VALUE (2, 2);
-INSERT INTO related VALUE (3, 3);
-INSERT INTO related VALUE (4, 4);
-INSERT INTO related VALUE (5, 5);
-INSERT INTO related VALUE (6, 6);
-INSERT INTO related VALUE (7, 7);
-INSERT INTO related VALUE (8, 8);
-INSERT INTO related VALUE (9, 9);
-INSERT INTO related VALUE (10,10);
-INSERT INTO related VALUE (1,10);
-
-
-INSERT INTO SuperviseOf VALUE (10,1);
-INSERT INTO SuperviseOf VALUE (9, 1);
-INSERT INTO SuperviseOf VALUE (8, 2);
-INSERT INTO SuperviseOf VALUE (7, 1);
-INSERT INTO SuperviseOf VALUE (6, 1);
-INSERT INTO SuperviseOf VALUE (5, 2);
-INSERT INTO SuperviseOf VALUE (4, 1);
-INSERT INTO SuperviseOf VALUE (3, 2);
-
-
-INSERT INTO workOn VALUE (1,1,20);
-INSERT INTO workOn VALUE (1,4,20);
-INSERT INTO workOn VALUE (1,7,20);
-INSERT INTO workOn VALUE (1,3,20);
-INSERT INTO workOn VALUE (2,2,12);
-INSERT INTO workOn VALUE (2,6,20);
-INSERT INTO workOn VALUE (3,5,20);
-INSERT INTO workOn VALUE (3,8,20);
-INSERT INTO workOn VALUE (3,9,20);
-INSERT INTO workOn VALUE (3,10,20);
-
-
-
-INSERT INTO assigned VALUE (1, '101');
-INSERT INTO assigned VALUE (2, '101');
-
-INSERT INTO situated VALUE ('101', 1);
-INSERT INTO situated VALUE ('102', 1);
-
-
-
-
-INSERT INTO workIn VALUE (1, 1);
-INSERT INTO workIn VALUE (2, 2);
-INSERT INTO workIn VALUE (4, 1);
-INSERT INTO workIn VALUE (6,1);
-
-INSERT INTO manage VALUE (1,1,'2014-02-23');
-INSERT INTO manage VALUE (2,2,'2014-02-23');
-
-
-DROP TABLE workOn;
-DROP TABLE workIn;
-DROP TABLE situated;
-DROP TABLE related;
-DROP TABLE manage;
-DROP TABLE chargedBy;
-DROP TABLE assigned;
-DROP TABLE SuperviseOf;
-DROP TABLE Project;
-DROP TABLE Location;
-DROP TABLE Dependent;
-DROP TABLE Employees;
-DROP TABLE Department;
-
 INSERT INTO Employees VALUE (1,'jason','1991-04-22','188 boul de L\'Assomption, QC', 'M', 5149926186, 3199.4237);
 INSERT INTO Employees VALUE (2,'Fatimah', '1991-04-12', '20 Maple Avenue San Pedro, QC', 'M', 5149926186, 3129.4237);
 INSERT INTO Employees VALUE (3,'Chanel', '1992-06-22', '7 W. Adams Lane San Jose, QC', 'F', 5149926186, 4999.4237);
@@ -232,20 +133,21 @@ INSERT INTO Location VALUE ('H building');
 INSERT INTO Location VALUE ('EV building');
 INSERT INTO Location VALUE ('S building');
 
-INSERT INTO Project VALUE (1, 'x');
-INSERT INTO Project VALUE (2, 't');
-INSERT INTO Project VALUE (3, 'website');
+INSERT INTO Project VALUE (1, 'x','preliminary');
+INSERT INTO Project VALUE (2, 't','intermediate');
+INSERT INTO Project VALUE (3, 'website','advanced');
+INSERT INTO Project VALUE (4, 'k','complete');
 
-INSERT INTO Dependent VALUE (1,1, 'Tim', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (2,1, 'Joe', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (3,2, 'Li', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (4,2, 'Zhang', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (5,2, 'Wang', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (6,3, 'Amy', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (7,3, 'Cindy', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (8,3, 'Phil', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (9,3, 'Max', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (10,3, 'Agnes', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (1, 1, 'A', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (2, 2, 'B', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (3, 2, 'C', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (4, 3, 'D', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (5, 3, 'D', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (6, 3, 'F', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (7, 4, 'G', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (8, 4, 'H', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (9, 4, 'I', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (10, 4, 'J', '1993-03-23', 'F');
 
 INSERT INTO related VALUE (1, 1);
 INSERT INTO related VALUE (2, 2);
@@ -268,6 +170,7 @@ INSERT INTO SuperviseOf VALUE (5, 2);
 INSERT INTO SuperviseOf VALUE (4, 1);
 INSERT INTO SuperviseOf VALUE (3, 2);
 
+
 INSERT INTO workOn VALUE (1,1,20);
 INSERT INTO workOn VALUE (1,4,20);
 INSERT INTO workOn VALUE (1,7,20);
@@ -279,20 +182,43 @@ INSERT INTO workOn VALUE (3,8,20);
 INSERT INTO workOn VALUE (3,9,20);
 INSERT INTO workOn VALUE (3,10,20);
 
-INSERT INTO assigned VALUE (1, 'EV building');
+
+
+INSERT INTO assigned VALUE (1, 'H building');
 INSERT INTO assigned VALUE (2, 'H building');
 
-INSERT INTO situated VALUE ('EV building', 1);
-INSERT INTO situated VALUE ('H building', 2);
+INSERT INTO situated VALUE ('H building', 1);
+INSERT INTO situated VALUE ('S building', 2);
 
-INSERT INTO chargedBy VALUE (1, 1);
-INSERT INTO chargedBy VALUE (2, 1);
-INSERT INTO chargedBy VALUE (3, 2);
+INSERT INTO chargedBy VALUE (1,1);
+INSERT INTO chargedBy VALUES (2,2);
+
 
 INSERT INTO workIn VALUE (1, 1);
 INSERT INTO workIn VALUE (2, 2);
 INSERT INTO workIn VALUE (4, 1);
-INSERT INTO workIn VALUE (6,1);
+INSERT INTO workIn VALUE (6, 1);
 
 INSERT INTO manage VALUE (1,1,'2014-02-23');
 INSERT INTO manage VALUE (2,2,'2014-02-23');
+
+
+DROP TABLE workOn;
+DROP TABLE workIn;
+DROP TABLE situated;
+DROP TABLE related;
+DROP TABLE manage;
+DROP TABLE chargedBy;
+DROP TABLE assigned;
+DROP TABLE SuperviseOf;
+DROP TABLE Project;
+DROP TABLE Location;
+DROP TABLE Dependent;
+DROP TABLE Employees;
+DROP TABLE Department;
+
+SELECT Ename, Esalary FROM Employees ORDER BY Esalary DESC;
+
+SELECT Ename
+FROM Employees
+WHERE ESIN NOT IN(SELECT ESIN FROM workOn) OR ESIN = (SELECT ESIN FROM workOn GROUP BY ESIN HAVING COUNT(*) > 1);

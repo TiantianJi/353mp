@@ -98,8 +98,8 @@ table {
     </select>
     <input type="text", id="Where" name="where"/><br>
     <button type="submit" class="btn" value="Search" name="submit"><i class="fa fa-search"></i> Search</button>
-    <button type="submit" name="query1" value="query1">all employee with highest to lowest salary</button>
-    <button type="submit" name="query2" value="query2">all employee working on more than 1 project or zero project</button>
+    <button type="submit" class="btn" name="query1" value="query1"><i class="fa fa-search"></i>all employee with highest to lowest salary</button>
+    <button type="submit" class="btn" name="query2" value="query2"><i class="fa fa-search"></i>all employee working on more than 1 project or zero project</button>
 </form>
 </h3>
 
@@ -462,8 +462,7 @@ table {
                             echo "<th>".$row["ESIN"]."</th>"."<th>".$row["SSIN"]."</th>";
                             echo "</tr>";
                         }
-                        }
-                    }else if ($from === "workIn"){
+                    } else if ($from === "workIn"){
                         echo "<br>";
                         echo "<table>";
                         echo "<tr>"."<th>Employee SIN</th>"."<th>Department Number</th>"."</tr>";
@@ -472,7 +471,7 @@ table {
                             echo "<th>".$row["ESIN"]."</th>"."<th>".$row["DepartmentNumber"]."</th>";
                             echo "</tr>";
                         }
-                    }else if ($from === "workOn"){
+                    } else if ($from === "workOn"){
                         echo "<br>";
                         echo "<table>";
                         echo "<tr>"."<th>PID</th>"."<th>Employee SIN</th>"."<th>Hours</th>"."</tr>";
@@ -483,8 +482,9 @@ table {
                         }
                         echo "</table>";
                     }
-                    else if (!empty($select2))
-                {
+                }
+
+                else if (!empty($select2)) {
                     echo "<br>";
                     echo "<table>";
                     while($row = $result->fetch_assoc()) {
@@ -494,7 +494,7 @@ table {
                         echo "</tr>";
                     }
                     echo "</table>";
-                }else{
+                } else {
                     // 输出数据
                     echo "<br>";
                     echo "<table>";
@@ -508,12 +508,12 @@ table {
 
                     echo "</table>";
                 }
-                } else {
+            } else {
                 throw new mysqli_sql_exception('empty');
             }
 
-
-        } catch (mysqli_sql_exception $e)
+        }
+        catch (mysqli_sql_exception $e)
         {
             echo $e->getMessage();
         }
