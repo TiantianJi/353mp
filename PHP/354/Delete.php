@@ -137,7 +137,7 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect, 'Employees SIN','ESIN')
         jsAddItemToSelect(objSelect, 'Name', 'DependentName');
         jsAddItemToSelect(objSelect, 'BirthDate', 'DBirthDate');
-        jsAddItemToSelect(objSelect, 'Gender', 'DGender');
+        jsAddItemToSelect(objSelect, 'Gender', 'DdGender');
     }
 
     function setEmployees(objSelect) {
@@ -163,7 +163,7 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'Department Number', 'DepartmentNumber')
         jsAddItemToSelect(objSelect, 'Employee SIN', 'ESIN');
-        jsAddItemToSelect(objSelect, 'StarDate', 'StarDate');
+        jsAddItemToSelect(objSelect, 'Start Date', 'StartDate');
     }
 
     function setProject(objSelect) {

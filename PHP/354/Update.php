@@ -154,7 +154,7 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'Name', 'DependentName');
         jsAddItemToSelect(objSelect, 'BirthDate', 'DBirthDate');
-        jsAddItemToSelect(objSelect, 'Gender', 'DGender');
+        jsAddItemToSelect(objSelect, 'Gender', 'DdGender');
     }
 
     function setDependentWhere(objSelect) {
@@ -164,7 +164,7 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect,'Employees SIN','ESIN')
         jsAddItemToSelect(objSelect, 'Name', 'DependentName');
         jsAddItemToSelect(objSelect, 'BirthDate', 'DBirthDate');
-        jsAddItemToSelect(objSelect, 'Gender', 'DGender');
+        jsAddItemToSelect(objSelect, 'Gender', 'DdGender');
     }
 
     function setEmployees(objSelect) {
@@ -200,7 +200,7 @@ h3{ font-family: verdana;
         jsAddItemToSelect(objSelect, '', '');
         jsAddItemToSelect(objSelect, 'Department Number', 'DepartmentNumber')
         jsAddItemToSelect(objSelect, 'Employee SIN', 'ESIN');
-        jsAddItemToSelect(objSelect, 'StarDate', 'StarDate');
+        jsAddItemToSelect(objSelect, 'Start Date', 'StartDate');
     }
 
     function setProject(objSelect) {
@@ -299,6 +299,7 @@ h3{ font-family: verdana;
                 throw new mysqli_sql_exception("Please fill all the information.");
             } else {
                 $query = "UPDATE ". $From." SET ".$NAtt.$NCon." WHERE ".$where.$Con.";";
+                echo $query;
                 $result = $dbConnection->query($query);
                 if (!empty($result))
                 {

@@ -87,7 +87,7 @@ p {
         define('DB_HOST', 'syc353.encs.concordia.ca');//根据电脑环境,自由配置
         define('DB_USER', $_POST['username']);
         define('DB_PASS', $_POST['Password']);
-        define('DB_NAME', 'syc353_4');//根据电脑环境,自由配置
+        define('DB_NAME', '``');//根据电脑环境,自由配置
         try{
             $dbConnection = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             if (!$dbConnection) {
