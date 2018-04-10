@@ -246,7 +246,7 @@ INSERT INTO workOn VALUE (4,30,20);
 INSERT INTO assigned VALUE (1, 'H building');
 INSERT INTO assigned VALUE (2, 'EV building');
 INSERT INTO assigned VALUE (3,'S building');
-INSERT INTO assigned VALUE (3,'T building');
+INSERT INTO assigned VALUE (4,'T building');
 
 INSERT INTO situated VALUE ('H building', 1);
 INSERT INTO situated VALUE ('EV building', 2);
