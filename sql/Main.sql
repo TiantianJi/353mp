@@ -138,28 +138,27 @@ INSERT INTO Project VALUE (2, 'app','intermediate');
 INSERT INTO Project VALUE (3, 'website','advanced');
 INSERT INTO Project VALUE (4, 'game','complete');
 
-INSERT INTO Dependent VALUE (136, 'Lily', '1968-03-23', 'F');
-INSERT INTO Dependent VALUE (213, 'Lily', '1976-03-23', 'F');
-INSERT INTO Dependent VALUE (323, 'tam', '1979-01-23', 'M');
-INSERT INTO Dependent VALUE (412, 'tom', '1956-04-23', 'F');
-INSERT INTO Dependent VALUE (523, 'tqm', '1967-05-23', 'F');
-INSERT INTO Dependent VALUE (614, 'sem', '1983-08-23', 'F');
-INSERT INTO Dependent VALUE (712, 'wem', '1999-01-23', 'M');
-INSERT INTO Dependent VALUE (811, 'lem', '1978-09-23', 'F');
-INSERT INTO Dependent VALUE (912, 'tem', '1993-01-23', 'F');
-INSERT INTO Dependent VALUE (1011, 'tem', '1993-07-23', 'F');
-INSERT INTO Dependent VALUE (1136, 'tem', '1968-03-23', 'F');
-INSERT INTO Dependent VALUE (1213, 'tem', '1976-03-23', 'F');
-INSERT INTO Dependent VALUE (1323, 'jem', '1979-01-23', 'M');
-INSERT INTO Dependent VALUE (1412, 'gem', '1956-04-23', 'F');
-INSERT INTO Dependent VALUE (1523, 'tem', '1967-05-23', 'F');
-INSERT INTO Dependent VALUE (1614, 'bem', '1983-08-23', 'F');
-INSERT INTO Dependent VALUE (1712, 'cem', '1999-01-23', 'M');
-INSERT INTO Dependent VALUE (1811, 'zem', '1978-09-23', 'F');
-INSERT INTO Dependent VALUE (1912, 'yem', '1993-01-23', 'F');
-INSERT INTO Dependent VALUE (2012, 'rem', '1993-01-23', 'F');
+INSERT INTO Dependent VALUE (136, 1, 'Lily', '1968-03-23', 'F');
+INSERT INTO Dependent VALUE (213, 2, 'Lily', '1976-03-23', 'F');
+INSERT INTO Dependent VALUE (323, 3, 'tam', '1979-01-23', 'M');
+INSERT INTO Dependent VALUE (412, 4, 'tom', '1956-04-23', 'F');
+INSERT INTO Dependent VALUE (523, 5, 'tqm', '1967-05-23', 'F');
+INSERT INTO Dependent VALUE (614, 6, 'sem', '1983-08-23', 'F');
+INSERT INTO Dependent VALUE (712, 7, 'wem', '1999-01-23', 'M');
+INSERT INTO Dependent VALUE (811, 8, 'lem', '1978-09-23', 'F');
+INSERT INTO Dependent VALUE (912, 9, 'tem', '1993-01-23', 'F');
+INSERT INTO Dependent VALUE (1011, 10, 'tem', '1993-07-23', 'F');
+INSERT INTO Dependent VALUE (1136, 11, 'tem', '1968-03-23', 'F');
+INSERT INTO Dependent VALUE (1213, 12, 'tem', '1976-03-23', 'F');
+INSERT INTO Dependent VALUE (1323, 13, 'jem', '1979-01-23', 'M');
+INSERT INTO Dependent VALUE (1412, 14, 'gem', '1956-04-23', 'F');
+INSERT INTO Dependent VALUE (1523, 15, 'tem', '1967-05-23', 'F');
+INSERT INTO Dependent VALUE (1614, 16, 'bem', '1983-08-23', 'F');
+INSERT INTO Dependent VALUE (1712, 17, 'cem', '1999-01-23', 'M');
+INSERT INTO Dependent VALUE (1811, 18, 'zem', '1978-09-23', 'F');
+INSERT INTO Dependent VALUE (1912, 19, 'yem', '1993-01-23', 'F');
+INSERT INTO Dependent VALUE (2012, 20, 'rem', '1993-01-23', 'F');
 
-//这个表没加key吧，之前两边都有重复值
 INSERT INTO related VALUE (136, 1);
 INSERT INTO related VALUE (213, 2);
 INSERT INTO related VALUE (323, 3);
@@ -247,17 +246,17 @@ INSERT INTO workOn VALUE (4,30,20);
 INSERT INTO assigned VALUE (1, 'H building');
 INSERT INTO assigned VALUE (2, 'EV building');
 INSERT INTO assigned VALUE (3,'S building');
-INSERT INTO assigned VALUE (3,'T');
+INSERT INTO assigned VALUE (3,'T building');
 
 INSERT INTO situated VALUE ('H building', 1);
 INSERT INTO situated VALUE ('EV building', 2);
 INSERT INTO situated VALUE ('S building',3);
-INSERT INTO situated VALUE ('T',3);
+INSERT INTO situated VALUE ('T building',3);
 
 INSERT INTO chargedBy VALUE (1,1);
 INSERT INTO chargedBy VALUE (2,2);
 INSERT INTO chargedBy VALUE (3,3);
-INSERT INTO chargedBy VALUE (4,4);
+INSERT INTO chargedBy VALUE (4,3);
 
 
 INSERT INTO workIn VALUE (1, 1);
