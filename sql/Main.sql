@@ -131,47 +131,67 @@ INSERT INTO Department VALUE (3, 'application');
 INSERT INTO Location VALUE ('H building');
 INSERT INTO Location VALUE ('EV building');
 INSERT INTO Location VALUE ('S building');
-INSERT INTO Location VALUE ('T');
+INSERT INTO Location VALUE ('T building');
 
-INSERT INTO Project VALUE (1, 'x','preliminary');
-INSERT INTO Project VALUE (2, 't','intermediate');
+INSERT INTO Project VALUE (1, 'phython','preliminary');
+INSERT INTO Project VALUE (2, 'app','intermediate');
 INSERT INTO Project VALUE (3, 'website','advanced');
-INSERT INTO Project VALUE (4, 'k','complete');
+INSERT INTO Project VALUE (4, 'game','complete');
 
-INSERT INTO Dependent VALUE (1, 1, 'A', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (2, 2, 'B', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (3, 2, 'C', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (4, 3, 'D', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (5, 3, 'D', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (6, 3, 'F', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (7, 4, 'G', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (8, 4, 'H', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (9, 4, 'I', '1993-03-23', 'F');
-INSERT INTO Dependent VALUE (10, 4, 'J', '1993-03-23', 'F');
+INSERT INTO Dependent VALUE (136, 'Lily', '1968-03-23', 'F');
+INSERT INTO Dependent VALUE (213, 'Lily', '1976-03-23', 'F');
+INSERT INTO Dependent VALUE (323, 'tam', '1979-01-23', 'M');
+INSERT INTO Dependent VALUE (412, 'tom', '1956-04-23', 'F');
+INSERT INTO Dependent VALUE (523, 'tqm', '1967-05-23', 'F');
+INSERT INTO Dependent VALUE (614, 'sem', '1983-08-23', 'F');
+INSERT INTO Dependent VALUE (712, 'wem', '1999-01-23', 'M');
+INSERT INTO Dependent VALUE (811, 'lem', '1978-09-23', 'F');
+INSERT INTO Dependent VALUE (912, 'tem', '1993-01-23', 'F');
+INSERT INTO Dependent VALUE (1011, 'tem', '1993-07-23', 'F');
+INSERT INTO Dependent VALUE (1136, 'tem', '1968-03-23', 'F');
+INSERT INTO Dependent VALUE (1213, 'tem', '1976-03-23', 'F');
+INSERT INTO Dependent VALUE (1323, 'jem', '1979-01-23', 'M');
+INSERT INTO Dependent VALUE (1412, 'gem', '1956-04-23', 'F');
+INSERT INTO Dependent VALUE (1523, 'tem', '1967-05-23', 'F');
+INSERT INTO Dependent VALUE (1614, 'bem', '1983-08-23', 'F');
+INSERT INTO Dependent VALUE (1712, 'cem', '1999-01-23', 'M');
+INSERT INTO Dependent VALUE (1811, 'zem', '1978-09-23', 'F');
+INSERT INTO Dependent VALUE (1912, 'yem', '1993-01-23', 'F');
+INSERT INTO Dependent VALUE (2012, 'rem', '1993-01-23', 'F');
 
-INSERT INTO related VALUE (1, 1);
-INSERT INTO related VALUE (2, 2);
-INSERT INTO related VALUE (3, 2);
-INSERT INTO related VALUE (4, 3);
-INSERT INTO related VALUE (5, 3);
-INSERT INTO related VALUE (6, 3);
-INSERT INTO related VALUE (7, 4);
-INSERT INTO related VALUE (8, 4);
-INSERT INTO related VALUE (9, 4);
-INSERT INTO related VALUE (10, 4);
+//这个表没加key吧，之前两边都有重复值
+INSERT INTO related VALUE (136, 1);
+INSERT INTO related VALUE (213, 2);
+INSERT INTO related VALUE (323, 3);
+INSERT INTO related VALUE (412, 4);
+INSERT INTO related VALUE (523, 5);
+INSERT INTO related VALUE (614, 6);
+INSERT INTO related VALUE (712, 7);
+INSERT INTO related VALUE (811, 8);
+INSERT INTO related VALUE (912, 9);
+INSERT INTO related VALUE (1011,10);
+INSERT INTO related VALUE (1136, 11);
+INSERT INTO related VALUE (1213, 12);
+INSERT INTO related VALUE (1323, 13);
+INSERT INTO related VALUE (1412, 14);
+INSERT INTO related VALUE (1523, 15);
+INSERT INTO related VALUE (1614, 16);
+INSERT INTO related VALUE (1712, 17);
+INSERT INTO related VALUE (1811, 18);
+INSERT INTO related VALUE (1912, 19);
+INSERT INTO related VALUE (2011,20);
+
 
 INSERT INTO SuperviseOf VALUE (2,1);
 INSERT INTO SuperviseOf VALUE (3,1);
 INSERT INTO SuperviseOf VALUE (4,1);
 INSERT INTO SuperviseOf VALUE (5,1);
 INSERT INTO SuperviseOf VALUE (6,1);
-
 INSERT INTO SuperviseOf VALUE (8,7);
 INSERT INTO SuperviseOf VALUE (9,7);
 INSERT INTO SuperviseOf VALUE (10,7);
 INSERT INTO SuperviseOf VALUE (11,7);
 INSERT INTO SuperviseOf VALUE (12,7);
-
 INSERT INTO SuperviseOf VALUE (14,13);
 INSERT INTO SuperviseOf VALUE (15,13);
 INSERT INTO SuperviseOf VALUE (16,13);
@@ -189,7 +209,6 @@ INSERT INTO SuperviseOf VALUE (27,13);
 INSERT INTO SuperviseOf VALUE (28,13);
 INSERT INTO SuperviseOf VALUE (29,13);
 INSERT INTO SuperviseOf VALUE (30,13);
-
 
 
 INSERT INTO workOn VALUE (1,1,20);
@@ -236,9 +255,9 @@ INSERT INTO situated VALUE ('S building',3);
 INSERT INTO situated VALUE ('T',3);
 
 INSERT INTO chargedBy VALUE (1,1);
-INSERT INTO chargedBy VALUES (2,2);
+INSERT INTO chargedBy VALUE (2,2);
 INSERT INTO chargedBy VALUE (3,3);
-INSERT INTO chargedBy VALUE (4,3);
+INSERT INTO chargedBy VALUE (4,4);
 
 
 INSERT INTO workIn VALUE (1, 1);
