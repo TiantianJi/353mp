@@ -315,3 +315,13 @@ SELECT Ename, Esalary FROM Employees ORDER BY Esalary DESC;
 SELECT Ename
 FROM Employees
 WHERE ESIN NOT IN(SELECT ESIN FROM workOn) OR ESIN = (SELECT ESIN FROM workOn GROUP BY ESIN HAVING COUNT(*) > 1);
+
+SELECT Egender, sum(Esalary)
+FROM Employees
+GROUP BY Egender;
+
+SELECT ESIN, Egender
+FROM Employees
+ORDER BY Egender;
+
+UPDATE Employees SET Eaddress='adshfiu'|| Eaddress='asdfj' WHERE ESIN=30;

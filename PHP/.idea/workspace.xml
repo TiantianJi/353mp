@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be6e5c6d-3ae1-4784-848c-38f41db2fccd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/354/Delete.php" afterPath="$PROJECT_DIR$/354/Delete.php" />
-      <change beforePath="$PROJECT_DIR$/354/Update.php" afterPath="$PROJECT_DIR$/354/Update.php" />
-      <change beforePath="$PROJECT_DIR$/final/Update.php" afterPath="$PROJECT_DIR$/final/Update.php" />
-      <change beforePath="$PROJECT_DIR$/final/logIn.php" afterPath="$PROJECT_DIR$/final/logIn.php" />
-      <change beforePath="$PROJECT_DIR$/../sql/Main.sql" afterPath="$PROJECT_DIR$/../sql/Main.sql" />
-      <change beforePath="$PROJECT_DIR$/../~$353mp.docx" afterPath="$PROJECT_DIR$/../~$353mp.docx" />
-    </list>
+    <list default="true" id="be6e5c6d-3ae1-4784-848c-38f41db2fccd" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +72,7 @@
             <entry file="file://$PROJECT_DIR$/354/check.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="573">
-                  <caret line="484" column="17" lean-forward="true" selection-start-line="484" selection-start-column="17" selection-end-line="484" selection-end-column="17" />
+                  <caret line="484" column="17" lean-forward="false" selection-start-line="484" selection-start-column="17" selection-end-line="484" selection-end-column="17" />
                   <folding>
                     <marker date="1523245931952" expanded="true" signature="12288:12346" ph="SELECT Ename... Employees" />
                     <marker date="1523245931952" expanded="true" signature="12755:12895" ph="SELECT Ename... Employees" />
@@ -232,16 +224,15 @@
       <workItem from="1522984844636" duration="322000" />
       <workItem from="1523017864433" duration="323000" />
       <workItem from="1523022974617" duration="18222000" />
-      <workItem from="1523279199749" duration="3962000" />
+      <workItem from="1523279199749" duration="4162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72972000" />
+    <option name="totallyTimeSpent" value="73172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14878398" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -653,7 +644,7 @@
     <entry file="file://$PROJECT_DIR$/354/check.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
-          <caret line="484" column="17" lean-forward="true" selection-start-line="484" selection-start-column="17" selection-end-line="484" selection-end-column="17" />
+          <caret line="484" column="17" lean-forward="false" selection-start-line="484" selection-start-column="17" selection-end-line="484" selection-end-column="17" />
           <folding>
             <marker date="1523245931952" expanded="true" signature="12288:12346" ph="SELECT Ename... Employees" />
             <marker date="1523245931952" expanded="true" signature="12755:12895" ph="SELECT Ename... Employees" />
